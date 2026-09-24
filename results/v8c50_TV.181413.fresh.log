@@ -1,0 +1,5 @@
+WARNING: If MPI_Abort is called during execution, result files could not be copied.
+Running: /root/mm/envs/aster/bin/run_aster -w /home/user/aas-corner-fe/wd/v8c50_TV --status-file /root/.tmp_run_aster/run_aster_an7y5p4d/__status__ --no-mpi /root/.tmp_run_aster/run_aster_an7y5p4d/v8c50_TV.0
+
+# ------------------------------------------------------------------------------
+Execution of code_aster
