@@ -6085,3 +6085,41 @@ Instant de calcul:  1.450000000000e-01 - Niveau de découpe: 3
 |     1        X | 1.66545E-01  X | 2.72671E+02    |TANGENTE (NOSYM)|
 |     2        X | 9.31567E-02  X | 1.53243E+02    |TANGENTE (NOSYM)|
 |     3        X | 7.40577E-02  X | 1.21304E+02    |TANGENTE (NOSYM)|
+|     4        X | 8.43732E-03  X | 1.38096E+01    |TANGENTE (NOSYM)|
+|     5        X | 6.84814E-03  X | 1.12050E+01    |TANGENTE (NOSYM)|
+|     6        X | 1.21380E-03  X | 1.98579E+00    |TANGENTE (NOSYM)|
+|     7        X | 2.90041E-04  X | 4.74526E-01    |TANGENTE (NOSYM)|
+|     8          | 4.51523E-06    | 7.38719E-03    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  4.515229735849e-06 au noeud et degré de liberté <9554   
+DX>
+Temps CPU consommé dans ce pas de temps    : 11 min  4 s
+
+* Nombre d'itérations de Newton                     : 9
+* Temps total intégration comportement              : 51.569 s (10 intégrations)
+* Temps total factorisation matrice                 : 8 min 40 s (9 factorisations)
+* Temps construction second membre                  : 0.756 s
+* Temps total résolution K.U=F                      : 17.173 s (9 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 1 min 14 s
+Mémoire (Mo) :  4905.60 /  3241.27 /  2911.79 /  1131.91 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  1.450000000000e-01 pour le numéro d'ordre 8
+Champ stocké <SIEF_ELGA> à l'instant  1.450000000000e-01 pour le numéro d'ordre 8
+Champ stocké <VARI_ELGA> à l'instant  1.450000000000e-01 pour le numéro d'ordre 8
+Champ stocké <COMPORTEMENT> à l'instant  1.450000000000e-01 pour le numéro d'ordre 8
+[ 25%] Instant calculé : 1.45000e-01, seul l'instant initial a été archivé
+---------------------------------------------------------------------
+Instant de calcul:  1.500000000000e-01 - Niveau de découpe: 3
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+|     0        X | 1.74259E-02  X | 2.82684E+01    |TANGENTE (NOSYM)|
+|     1        X | 1.02569E-02  X | 1.66168E+01    |TANGENTE (NOSYM)|
