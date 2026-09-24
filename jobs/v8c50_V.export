@@ -1,0 +1,21 @@
+P time_limit 20000
+P memory_limit 4200
+P ncpus 2
+P mpi_nbcpu 1
+F comm __ROOT__/jobs/v8c50_V_s00.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s01.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s02.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s03.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s04.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s05.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s06.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s07.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s08.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s09.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s10.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s11.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s12.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s13.comm D 1
+F comm __ROOT__/jobs/v8c50_V_s14.comm D 1
+F mmed __ROOT__/../mesh/mesh/m8_h100_d16_ct50_e50.med D 20
+F mess __ROOT__/jobs/v8c50_V.mess R 6

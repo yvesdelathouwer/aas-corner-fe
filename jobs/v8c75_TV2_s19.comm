@@ -1,0 +1,48 @@
+POURSUITE(LANG='EN', PAR_LOT='NON')
+
+LOADS='TV2'
+CURVE='__ROOT__/../results/results/v8c75_TV2.curve'
+common=dict(MODELE=model, CHAM_MATER=fmat, EXCIT=(_F(CHARGE=fix), _F(CHARGE=load, FONC_MULT=ramp)),
+        COMPORTEMENT=(_F(RELATION='ENDO_FISS_EXP', GROUP_MA=('CONC','HZ')), _F(RELATION='ELAS', GROUP_MA=('STEEL','SLV','HZH'))),
+        NEWTON=_F(MATRICE='TANGENTE', REAC_ITER=1),
+        CONVERGENCE=_F(RESI_GLOB_RELA=1.E-4, ITER_GLOB_MAXI=30), ARCHIVAGE=_F(PAS_ARCH=1), SOLVEUR=_F(METHODE='MUMPS', GESTION_MEMOIRE='OUT_OF_CORE'))
+import os, re
+tcur=0.0; peak=0.0; stopped=False
+if os.path.exists(CURVE):
+    for line in open(CURVE):
+        m=re.match(r'CURVE\s+(\S+)\s+(\S+)', line)
+        if m:
+            tcur=max(tcur, float(m.group(1))); peak=max(peak, float(m.group(2)))
+        if line.startswith('STOP'): stopped=True
+def reac(res, t):
+    r2=CALC_CHAMP(RESULTAT=res, FORCE='REAC_NODA', INST=t)
+    vals={}
+    for g in ('HEADT','HEADV'):
+        try:
+            tb=POST_RELEVE_T(ACTION=_F(OPERATION='EXTRACTION', INTITULE='R', RESULTAT=r2, NOM_CHAM='REAC_NODA',
+                                       GROUP_NO=g, RESULTANTE='DX', INST=t)).EXTR_TABLE().values()
+            vals[g]=-tb['DX'][-1]*2
+        except Exception:
+            vals[g]=0.
+    DETRUIRE(NOM=r2)
+    return vals
+TARGETS=[0.4]
+for tn in TARGETS:
+    if stopped or tn <= tcur+1e-9: continue
+    try:
+        if tcur < 1e-12 and '0'=='1':
+            res=STAT_NON_LINE(INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+        else:
+            res=STAT_NON_LINE(reuse=res, ETAT_INIT=_F(EVOL_NOLI=res), INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+    except Exception as exc:
+        print('AASSTOP at', tcur, exc, flush=True)
+        open(CURVE,'a').write('STOP solver %g\n'%tcur); stopped=True; break
+    tcur=tn
+    v=reac(res, tcur)
+    tot=(v['HEADT'] if 'T' in LOADS else 0.)+(v['HEADV'] if 'V' in LOADS else 0.)
+    peak=max(peak, tot)
+    open(CURVE,'a').write('CURVE %g %g %g %g\n'%(tcur,tot,v['HEADT'],v['HEADV']))
+    print('AASCURVE %g %g %g %g'%(tcur,tot,v['HEADT'],v['HEADV']), flush=True)
+    if tot < 0.9*peak:
+        open(CURVE,'a').write('STOP peak %g\n'%peak); stopped=True; break
+FIN()

@@ -1,0 +1,26 @@
+P time_limit 20000
+P memory_limit 3000
+P ncpus 1
+P mpi_nbcpu 1
+F comm __ROOT__/jobs/v8c50_TV_s00.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s01.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s02.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s03.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s04.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s05.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s06.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s07.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s08.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s09.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s10.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s11.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s12.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s13.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s14.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s15.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s16.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s17.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s18.comm D 1
+F comm __ROOT__/jobs/v8c50_TV_s19.comm D 1
+F mmed __ROOT__/../mesh/mesh/m8_h100_d16_ct50_e50.med D 20
+F mess __ROOT__/jobs/v8c50_TV.mess R 6
