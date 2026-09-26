@@ -1,7 +1,7 @@
 POURSUITE(LANG='EN', PAR_LOT='NON')
 
 LOADS='TV'
-CURVE='__ROOT__/../results/results/v8c50_TV.curve'
+CURVE='__ROOT__/../results/v8c50_TV.curve'
 common=dict(MODELE=model, CHAM_MATER=fmat, EXCIT=(_F(CHARGE=fix), _F(CHARGE=load, FONC_MULT=ramp)),
         COMPORTEMENT=(_F(RELATION='ENDO_FISS_EXP', GROUP_MA=('CONC','HZ')), _F(RELATION='ELAS', GROUP_MA=('STEEL','SLV','HZH'))),
         NEWTON=_F(MATRICE='TANGENTE', REAC_ITER=1),

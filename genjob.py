@@ -1,7 +1,7 @@
 import os, sys
 # genjob.py TAG MESH LOADS UMAX NSTEP SEG
 TAG,MESH,LOADS,UMAX,NSTEP,SEG = sys.argv[1], sys.argv[2], sys.argv[3], float(sys.argv[4]), int(sys.argv[5]), int(sys.argv[6])
-D='__ROOT__/jobs'
+D='__ROOT__'
 dt=UMAX/NSTEP
 targets=[round(dt*(i+1),10) for i in range(NSTEP)]
 segs=[targets[i:i+SEG] for i in range(0,len(targets),SEG)]
