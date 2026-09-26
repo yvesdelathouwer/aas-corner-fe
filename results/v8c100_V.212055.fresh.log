@@ -822,3 +822,5 @@ Instant de calcul:  3.000000000000e-02 - Niveau de découpe: 2
 ---------------------------------------------------------------------
 |     0        X | 3.46539E-02  X | 3.26737E+01    |TANGENTE (NOSYM)|
 |     1        X | 6.95987E-03  X | 6.30730E+00    |TANGENTE (NOSYM)|
+|     2        X | 1.70065E-03  X | 1.53453E+00    |TANGENTE (NOSYM)|
+|     3        X | 1.99446E-04  X | 1.79896E-01    |TANGENTE (NOSYM)|
