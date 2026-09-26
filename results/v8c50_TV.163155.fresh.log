@@ -6350,3 +6350,36 @@ Instant de calcul:  1.512500000000e-01 - Niveau de découpe: 5
 |     7        X | 1.53028E-03  X | 9.27121E-01    |TANGENTE (NOSYM)|
 |     8        X | 3.64368E-04  X | 2.20452E-01    |TANGENTE (NOSYM)|
 |     9        X | 3.55124E-04  X | 2.14865E-01    |TANGENTE (NOSYM)|
+|    10        X | 5.23758E-04  X | 3.16888E-01    |TANGENTE (NOSYM)|
+|    11        X | 3.81177E-04  X | 2.30653E-01    |TANGENTE (NOSYM)|
+|    12        X | 1.01412E-03  X | 6.13748E-01    |TANGENTE (NOSYM)|
+|    13        E |              X |                |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+<Erreur> Échec dans l'intégration de la loi de comportement
+
+<Action> On essaie de découper le pas de temps.
+
+On utilise la découpe manuelle.
+Découpe uniforme à partir de l'instant  1.500000000000e-01 en 2 pas de temps.
+(soit un incrément constant de  6.250000000000e-04)
+<Action> On découpe le pas de temps.
+Temps CPU consommé dans ce pas de temps    : 27 min 41 s
+
+* Nombre d'itérations de Newton                     : 14
+* Temps total intégration comportement              : 54.156 s (15 intégrations)
+* Temps total factorisation matrice                 : 24 min 24 s (14 factorisations)
+* Temps construction second membre                  : 0.662 s
+* Temps total résolution K.U=F                      : 50.883 s (14 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 1 min 30 s
+Mémoire (Mo) :  5530.49 /  2751.21 /  2533.09 /   981.59 (VmPeak / VmSize / Optimum / Minimum)
+
+---------------------------------------------------------------------
+Instant de calcul:  1.506250000000e-01 - Niveau de découpe: 6
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+|     0        X | 3.57579E-03  X | 2.17847E+00    |TANGENTE (NOSYM)|
