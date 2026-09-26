@@ -1414,3 +1414,11 @@ Le champ <SIEF_ELGA> est lu dans ETAT_INIT dans la structure de données résult
 commande.
 Le champ <VARI_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
 commande.
+---------------------------------------------------------------------
+Instant de calcul:  6.000000000000e-02 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
