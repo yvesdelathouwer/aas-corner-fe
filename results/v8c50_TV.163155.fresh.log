@@ -6273,3 +6273,74 @@ Instant de calcul:  1.525000000000e-01 - Niveau de découpe: 4
 |     7        X | 7.26511E-04  X | 4.37182E-01    |TANGENTE (NOSYM)|
 |     8        X | 2.49039E-03  X | 1.49797E+00    |TANGENTE (NOSYM)|
 |     9        X | 4.29570E-02  X | 2.57918E+01    |TANGENTE (NOSYM)|
+Degré de liberté physique associé au noeud 37331 et à la composante DX.
+
+Problème : la matrice est singulière ou presque singulière :
+  Lors de la factorisation de la matrice, on a rencontré un problème
+  (pivot nul ou presque nul) à la ligne 134491 qui correspond au degré de liberté donné ci-dessus.
+
+Risques et conseils :
+   * Si la ligne correspond a un degré de liberté physique, il s'agit probablement d'un mouvement
+     de corps rigide mal bloqué.
+     Vérifiez les conditions aux limites.
+     Si vous faites du contact, il ne faut pas que la structure ne "tienne" que par le contact.
+     Vérifiez également les caractéristiques matériaux (module d'Young, ...).
+
+   * Si la ligne correspond a un degré de liberté de Lagrange, il s'agit sans doute d'une condition
+     limite redondante.
+     En particulier, il se peut que la relation linéaire surabondante provienne des conditions de
+contact.
+     Peut-être devriez vous exclure certains noeuds des conditions de contact
+     (mots clés SANS_NOEUD et SANS_GROUP_NO).
+
+   * Si le solveur utilisé est LDLT ou MULT_FRONT, vous pouvez utiliser le solveur MUMPS
+     car celui-ci est le seul à pouvoir factoriser les matrices qui ne sont pas définies positives.
+
+   * Parfois, en parallèle, le critère de détection de singularité de MUMPS est trop pessimiste ! Il
+reste néanmoins souvent
+     possible de faire passer le calcul complet en relaxant ce critère (augmenter de 1 ou 2 la
+valeur du mot-clé NPREC) ou
+     en le débranchant (valeur du mot-clé NPREC=-1) ou en relançant le calcul sur moins de
+processeurs.
+
+   * Il se peut aussi que ce phénomène soit tout à fait normal avec X-FEM si la fissure passe
+     très près d'un noeud.
+     Si le nombre de décimales perdues n'est pas trop grand (max 10 décimales),
+     vous pouvez relancer le calcul en augmentant le nombre de décimales perdues autorisé :
+     mot-clé NPREC du mot clé facteur SOLVEUR.
+     Sinon, contactez l'équipe de développement.
+
+
+|     9        E |              X |                |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+<Erreur> La matrice du système est singulière
+
+<Action> On essaie de découper le pas de temps.
+
+On utilise la découpe manuelle.
+Découpe uniforme à partir de l'instant  1.500000000000e-01 en 2 pas de temps.
+(soit un incrément constant de  1.250000000000e-03)
+<Action> On découpe le pas de temps.
+Temps CPU consommé dans ce pas de temps    : 22 min  6 s
+
+* Nombre d'itérations de Newton                     : 10
+* Temps total intégration comportement              : 40.372 s (11 intégrations)
+* Temps total factorisation matrice                 : 19 min 36 s (11 factorisations)
+* Temps construction second membre                  : 0.557 s
+* Temps total résolution K.U=F                      : 37.109 s (10 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 1 min 12 s
+Mémoire (Mo) :  5530.49 /  2749.21 /  2533.09 /   981.59 (VmPeak / VmSize / Optimum / Minimum)
+
+---------------------------------------------------------------------
+Instant de calcul:  1.512500000000e-01 - Niveau de découpe: 5
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+|     0        X | 1.89667E-03  X | 1.15221E+00    |TANGENTE (NOSYM)|
+|     1        X | 4.94257E-01  X | 3.12907E+02    |TANGENTE (NOSYM)|
+|     2        X | 2.55562E-02  X | 1.56140E+01    |TANGENTE (NOSYM)|
+|     3        X | 1.37258E-03  X | 8.37754E-01    |TANGENTE (NOSYM)|
