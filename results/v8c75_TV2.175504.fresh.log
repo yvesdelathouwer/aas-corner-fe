@@ -5333,3 +5333,110 @@ Instant de calcul:  1.300000000000e-01 - Niveau de découpe: 2
  ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
  ╚================================================================================================╝
 
+|     0        X | 1.06779E-02  X | 1.50103E+01    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   3560 Mo  alors qu'il n'y a que 148 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 488 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     1        X | 5.36936E-03  X | 7.54859E+00    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   3560 Mo  alors qu'il n'y a que 148 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 488 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+
+ ╔================================================================================================╗
+ ║ <A> <CATAMESS_41>                                                                              ║
+ ║                                                                                                ║
+ ║ Le message d'alarme 'FACTOR_75' a été émis 5 fois, il ne sera plus affiché.                    ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     2        X | 4.53800E-03  X | 6.37618E+00    |TANGENTE (NOSYM)|
+|     3        X | 4.65897E-03  X | 6.54677E+00    |TANGENTE (NOSYM)|
+|     4        X | 9.49750E-04  X | 1.33449E+00    |TANGENTE (NOSYM)|
+|     5          | 2.25301E-05    | 3.16569E-02    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  2.253014568396e-05 au noeud et degré de liberté <62465  
+DX>
+Temps CPU consommé dans ce pas de temps    : 9 min 38 s
+
+* Nombre d'itérations de Newton                     : 6
+* Temps total intégration comportement              : 26.292 s (7 intégrations)
+* Temps total factorisation matrice                 : 7 min 20 s (6 factorisations)
+* Temps construction second membre                  : 0.453 s
+* Temps total résolution K.U=F                      : 1 min  2 s (6 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 49.503 s
+Mémoire (Mo) :  7127.75 /  3663.20 /  2911.79 /  1131.91 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  1.300000000000e-01 pour le numéro d'ordre 8
+Champ stocké <SIEF_ELGA> à l'instant  1.300000000000e-01 pour le numéro d'ordre 8
+Champ stocké <VARI_ELGA> à l'instant  1.300000000000e-01 pour le numéro d'ordre 8
+Champ stocké <COMPORTEMENT> à l'instant  1.300000000000e-01 pour le numéro d'ordre 8
+[ 49%] Instant calculé : 1.30000e-01, seul l'instant initial a été archivé
+---------------------------------------------------------------------
+Instant de calcul:  1.400000000000e-01 - Niveau de découpe: 2
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+|     0        X | 5.65099E-02  X | 7.73725E+01    |TANGENTE (NOSYM)|
