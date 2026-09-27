@@ -4835,3 +4835,74 @@ Le champ <SIEF_ELGA> est lu dans ETAT_INIT dans la structure de données résult
 commande.
 Le champ <VARI_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
 commande.
+---------------------------------------------------------------------
+Instant de calcul:  2.100000000000e-01 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+La mémoire consommée actuellement hors JEVEUX est de 976.47 Mo.
+La mémoire limite pour l'allocation dynamique est fixée à 2848.93 Mo (-519.44 Mo).
+Cette valeur limite a été réactualisée lors de la mise en oeuvre d'un processus de libération.
+
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   4133 Mo  alors qu'il n'y a que 1515 Mo de disponible sur ce processeur !                     ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 569 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     0        X | 1.56530E-02  X | 3.25834E+01    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   4134 Mo  alors qu'il n'y a que 1507 Mo de disponible sur ce processeur !                     ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 569 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
