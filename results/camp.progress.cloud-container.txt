@@ -1,0 +1,54 @@
+02:08:14 RUN v8c75_V (fresh, attempt 1)
+04:01:06 RUN v8c75_V (resume, attempt 1)
+04:01:10 END v8c75_V rc=1 last=CURVE 0.15 16243.8 -5.61682e-14 16243.8
+04:01:10 RUN v8c75_V (resume, attempt 2)
+04:01:13 END v8c75_V rc=1 last=CURVE 0.15 16243.8 -5.61682e-14 16243.8
+04:01:14 RUN v8c75_V (resume, attempt 3)
+04:01:16 END v8c75_V rc=1 last=CURVE 0.15 16243.8 -5.61682e-14 16243.8
+04:01:17 RUN v8c75_V (resume, attempt 4)
+04:01:19 END v8c75_V rc=1 last=CURVE 0.15 16243.8 -5.61682e-14 16243.8
+04:01:20 RUN v8c75_V (resume, attempt 5)
+04:01:22 END v8c75_V rc=1 last=CURVE 0.15 16243.8 -5.61682e-14 16243.8
+04:01:22 RUN v8c75_V (resume, attempt 6)
+04:01:24 END v8c75_V rc=1 last=CURVE 0.15 16243.8 -5.61682e-14 16243.8
+04:01:25 RUN v8c75_V (resume, attempt 7)
+04:01:27 END v8c75_V rc=1 last=CURVE 0.15 16243.8 -5.61682e-14 16243.8
+04:01:27 RUN v8c75_V (resume, attempt 8)
+04:01:30 END v8c75_V rc=1 last=CURVE 0.15 16243.8 -5.61682e-14 16243.8
+04:01:30 RUN v8c75_TV (fresh, attempt 1)
+04:44:18 RUN v8c75_TV (fresh, attempt 1)
+04:58:09 END v8c75_TV rc=1 last=CURVE 0.02 13835.8 7093.95 6741.82
+04:58:09 RUN v8c75_TV (fresh, attempt 2)
+05:05:46 END v8c75_TV rc=143 last=
+05:05:46 RUN v8c75_TV (fresh, attempt 3)
+05:06:14 RUN v8c75_TV (fresh, attempt 1)
+06:17:14 END v8c75_TV rc=137 last=CURVE 0.12 53550 36576.7 16973.3
+06:17:15 RUN v8c75_TV (resume, attempt 2)
+06:17:18 END v8c75_TV rc=1 last=CURVE 0.12 53550 36576.7 16973.3
+06:17:19 RUN v8c75_TV (resume, attempt 3)
+06:17:21 END v8c75_TV rc=1 last=CURVE 0.12 53550 36576.7 16973.3
+06:17:22 RUN v8c75_TV (resume, attempt 4)
+06:17:24 END v8c75_TV rc=1 last=CURVE 0.12 53550 36576.7 16973.3
+06:17:25 RUN v8c75_TV (resume, attempt 5)
+06:17:28 END v8c75_TV rc=1 last=CURVE 0.12 53550 36576.7 16973.3
+06:17:28 RUN v8c75_TV (resume, attempt 6)
+06:17:30 END v8c75_TV rc=1 last=CURVE 0.12 53550 36576.7 16973.3
+06:17:31 RUN v8c75_TV (resume, attempt 7)
+06:17:34 END v8c75_TV rc=1 last=CURVE 0.12 53550 36576.7 16973.3
+06:17:35 RUN v8c75_TV (resume, attempt 8)
+06:17:37 END v8c75_TV rc=1 last=CURVE 0.12 53550 36576.7 16973.3
+06:17:37 RUN v8c50_V (fresh, attempt 1)
+09:09:50 RUN v8c50_V (resume, attempt 1)
+12:07:28 RUN v8c50_V (resume, attempt 1)
+12:48:27 END v8c50_V rc=0 2459s last=STOP peak 8117.18
+12:48:27 RUN v8c75_TV (fresh, attempt 1)
+14:17:40 END v8c75_TV rc=137 5353s last=CURVE 0.12 53550 36576.7 16973.3
+14:17:40 RUN v8c75_TV (resume, attempt 2)
+14:20:17 END v8c75_TV rc=143 157s last=CURVE 0.12 53550 36576.7 16973.3
+14:20:19 RUN v8c75_TV (resume, attempt 3)
+14:25:15 END v8c75_TV rc=137 296s last=CURVE 0.12 53550 36576.7 16973.3
+14:25:15 RUN v8c75_TV (resume, attempt 4)
+14:30:09 END v8c75_TV rc=137 294s last=CURVE 0.12 53550 36576.7 16973.3
+14:30:10 RUN v8c75_TV (resume, attempt 5)
+14:31:34 END v8c75_TV rc=143 84s last=CURVE 0.12 53550 36576.7 16973.3
+14:31:37 RUN v8c75_TV (resume, attempt 6)

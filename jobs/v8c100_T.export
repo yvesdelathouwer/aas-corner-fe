@@ -1,0 +1,31 @@
+P time_limit 20000
+P memory_limit 4200
+P ncpus 2
+P mpi_nbcpu 1
+F comm __ROOT__/v8c100_T_s00.comm D 1
+F comm __ROOT__/v8c100_T_s01.comm D 1
+F comm __ROOT__/v8c100_T_s02.comm D 1
+F comm __ROOT__/v8c100_T_s03.comm D 1
+F comm __ROOT__/v8c100_T_s04.comm D 1
+F comm __ROOT__/v8c100_T_s05.comm D 1
+F comm __ROOT__/v8c100_T_s06.comm D 1
+F comm __ROOT__/v8c100_T_s07.comm D 1
+F comm __ROOT__/v8c100_T_s08.comm D 1
+F comm __ROOT__/v8c100_T_s09.comm D 1
+F comm __ROOT__/v8c100_T_s10.comm D 1
+F comm __ROOT__/v8c100_T_s11.comm D 1
+F comm __ROOT__/v8c100_T_s12.comm D 1
+F comm __ROOT__/v8c100_T_s13.comm D 1
+F comm __ROOT__/v8c100_T_s14.comm D 1
+F comm __ROOT__/v8c100_T_s15.comm D 1
+F comm __ROOT__/v8c100_T_s16.comm D 1
+F comm __ROOT__/v8c100_T_s17.comm D 1
+F comm __ROOT__/v8c100_T_s18.comm D 1
+F comm __ROOT__/v8c100_T_s19.comm D 1
+F comm __ROOT__/v8c100_T_s20.comm D 1
+F comm __ROOT__/v8c100_T_s21.comm D 1
+F comm __ROOT__/v8c100_T_s22.comm D 1
+F comm __ROOT__/v8c100_T_s23.comm D 1
+F comm __ROOT__/v8c100_T_s24.comm D 1
+F mmed __ROOT__/../mesh/m8_h100_d16_ct100_e100.med D 20
+F mess __ROOT__/v8c100_T.mess R 6
