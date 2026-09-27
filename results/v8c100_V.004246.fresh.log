@@ -10470,3 +10470,280 @@ Instant de calcul:  4.500000000000e-01 - Niveau de découpe: 1
  ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
  ╚================================================================================================╝
 
+|     2          | 2.98793E-05    | 6.49281E-02    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  2.987934862563e-05 au noeud et degré de liberté <120953 
+DZ>
+Temps CPU consommé dans ce pas de temps    : 9 min 50 s
+
+* Nombre d'itérations de Newton                     : 3
+* Temps total intégration comportement              : 25.056 s (4 intégrations)
+* Temps total factorisation matrice                 : 8 min 18 s (3 factorisations)
+* Temps construction second membre                  : 0.963 s
+* Temps total résolution K.U=F                      : 35.011 s (3 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 31.688 s
+Mémoire (Mo) :  6747.86 /  2319.18 /  3368.17 /  1875.70 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  4.500000000000e-01 pour le numéro d'ordre 16
+Champ stocké <SIEF_ELGA> à l'instant  4.500000000000e-01 pour le numéro d'ordre 16
+Champ stocké <VARI_ELGA> à l'instant  4.500000000000e-01 pour le numéro d'ordre 16
+Champ stocké <COMPORTEMENT> à l'instant  4.500000000000e-01 pour le numéro d'ordre 16
+[100%] Instant calculé : 4.50000e-01, seul l'instant initial a été archivé
+Temps CPU consommé dans le calcul          : 9 min 50 s
+
+dont temps CPU "perdu" dans les découpes            : 0.000 s
+* Nombre de pas de temps                            : 1
+* Nombre d'itérations de Newton                     : 3
+* Temps dans l'archivage                            : 0.044 s
+* Temps dans le post-traitement                     : 0.000 s
+* Temps total intégration comportement              : 25.056 s (4 intégrations)
+* Temps total factorisation matrice                 : 8 min 18 s (3 factorisations)
+* Temps construction second membre                  : 0.963 s
+* Temps total résolution K.U=F                      : 35.011 s (3 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):    567.43    111.01    536.12
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):     55.27     18.80     55.78
+#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):      8.28      8.15      8.56
+# Résultat commande #0002 (STAT_NON_LINE): res ('<0000000e>') de type <NonLinearResult>
+# Mémoire (Mo) :  6747.86 /  2105.03 /  3368.17 /  1875.70 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:      499.75s (syst:      132.11s, elaps:      601.85s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt184
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de
+/root/mm/envs/aster/lib/python3.14/site-packages/code_aster/Supervis/ExecuteCommand.py, ligne 184
+CALC_CHAMP(CRITERE='RELATIF',
+           FORCE='REAC_NODA',
+           INFO=1,
+           INST=0.45,
+           PARALLELISME_TEMPS='NON',
+           PRECISION=1e-06,
+           RESULTAT=res)
+
+Le système linéaire à résoudre a 455904 degrés de liberté:
+   - 438438 sont des degrés de liberté physiques
+     (ils sont portés par 135682 noeuds du maillage)
+   - 17466 sont les couples de paramètres de Lagrange associés
+     aux 8733 relations linéaires dualisées.
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.51      0.00      0.52
+# Résultat commande #0003 (CALC_CHAMP): '<00000039>' de type <NonLinearResult>
+# Dépend de :
+# - model ('<00000002>') de type <Model>
+# - fmat ('<00000008>') de type <MaterialField>
+# Mémoire (Mo) :  6747.86 /  2105.03 /  3368.17 /  1875.70 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.82s (syst:        0.02s, elaps:        0.85s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt34
+# ----------------------------------------------------------------------------------------------
+# Commande #0004 de /home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s14.comm.changed.py, ligne 34
+tb = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                             FORMAT_C='MODULE',
+                             GROUP_NO='HEADT',
+                             INST=0.45,
+                             INTITULE='R',
+                             MOYE_NOEUD='OUI',
+                             NOM_CHAM='REAC_NODA',
+                             OPERATION='EXTRACTION',
+                             PRECISION=1e-06,
+                             REPERE='GLOBAL',
+                             RESULTANTE='DX',
+                             RESULTAT=r2),
+                   INFO=1)
+
+# Résultat commande #0004 (POST_RELEVE_T): tb ('<0000003a>') de type <Table>
+# Mémoire (Mo) :  6747.86 /  2105.03 /  3368.17 /  1875.70 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.01s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt34
+# ----------------------------------------------------------------------------------------------
+# Commande #0005 de /home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s14.comm.changed.py, ligne 34
+tb = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                             FORMAT_C='MODULE',
+                             GROUP_NO='HEADV',
+                             INST=0.45,
+                             INTITULE='R',
+                             MOYE_NOEUD='OUI',
+                             NOM_CHAM='REAC_NODA',
+                             OPERATION='EXTRACTION',
+                             PRECISION=1e-06,
+                             REPERE='GLOBAL',
+                             RESULTANTE='DX',
+                             RESULTAT=r2),
+                   INFO=1)
+
+# Résultat commande #0005 (POST_RELEVE_T): tb ('<0000003b>') de type <Table>
+# Mémoire (Mo) :  6747.86 /  2105.03 /  3368.17 /  1875.70 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt39
+# ----------------------------------------------------------------------------------------------
+# Commande #0006 de /home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s14.comm.changed.py, ligne 39
+DETRUIRE(INFO=1,
+         NOM=r2)
+
+# Mémoire (Mo) :  6747.86 /  2105.03 /  3368.17 /  1875.70 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.07s (syst:        0.00s, elaps:        0.07s)
+# ----------------------------------------------------------------------------------------------
+/home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s14.comm.changed.py:56: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/aas-corner-fe/jobs/../results/v8c100_V.curve' mode='a' encoding='UTF-8'>
+  open(CURVE,'a').write('CURVE %g %g %g %g\n'%(tcur,tot,v['HEADT'],v['HEADV']))
+AASCURVE 0.45 23871.3 2.09583e-14 23871.3
+
+.. _stg1_txt76
+# ----------------------------------------------------------------------------------------------
+# Commande #0007 de /root/mm/envs/aster/lib/python3.14/site-packages/code_aster/CodeCommands/fin.py,
+ligne 76
+FIN(INFO_RESU='NON',
+    RETASSAGE='NON')
+
+No database in results, objects not saved on processor #0
+
+ ╔================================================================================================╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez choisies d'ignorer sont précédées de (*).                        ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║            FACTOR_75            émise    3 fois                                                ║
+ ╚================================================================================================╝
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                    1875.70 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                    3368.17 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :    6747.86 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                 3368  Mo.
+     TAILLE CUMULEE LIBEREE            :                 2378  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :              3225998
+     NOMBRE TOTAL DE LIBERATIONS       :              3225501
+     APPELS AU MECANISME DE LIBERATION :                   16
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                11704  Mo.
+     VOLUME DES LECTURES               :                    5  Mo.
+     VOLUME DES ECRITURES              :                 8500  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :    1875.70 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :    3368.17 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :    6747.86 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : DI-27-SEPT-2026 04:36:19
+INFO './glob.1' deleted
+Deleting './glob.2': No such file or directory
+INFO './vola.1' deleted
+Deleting './vola.2': No such file or directory
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.17 :       0.73 :       0.90 :       0.90 *
+ * STAT_NON_LINE            :     499.75 :     132.11 :     631.86 :     601.85 *
+ * CALC_CHAMP               :       0.82 :       0.02 :       0.84 :       0.85 *
+ * POST_RELEVE_T            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.07 :       0.00 :       0.07 :       0.07 *
+ * FIN                      :       0.03 :       0.00 :       0.03 :       0.03 *
+ *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . check syntax          :       0.02 :       0.00 :       0.02 :       0.04 *
+ *  . fortran               :     500.72 :     132.86 :     633.58 :     603.59 *
+ ********************************************************************************
+ * TOTAL_JOB                :     500.93 :     132.87 :     633.80 :     603.81 *
+ ********************************************************************************
+
+# Mémoire (Mo) :  6747.86 /  2105.03 /  3368.17 /  1875.70 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.03s (syst:        0.00s, elaps:        0.03s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_6810=0
+
+
+execution ended (command file #15): <A>_ALARM
+
+# ------------------------------------------------------------------------------
+Content of /home/user/aas-corner-fe/wd/v8c100_V after execution:
+.:
+total 15452
+-rw-r--r-- 1 root root      332 Sep 27 00:42 1395.export
+-rw-r--r-- 1 root root      332 Sep 27 01:49 2904.export
+-rw-r--r-- 1 root root      332 Sep 27 02:06 3322.export
+-rw-r--r-- 1 root root      332 Sep 27 02:23 3650.export
+-rw-r--r-- 1 root root      332 Sep 27 02:34 3895.export
+-rw-r--r-- 1 root root      332 Sep 27 02:48 4362.export
+-rw-r--r-- 1 root root      332 Sep 27 02:58 4610.export
+-rw-r--r-- 1 root root      332 Sep 27 03:12 4907.export
+-rw-r--r-- 1 root root      332 Sep 27 03:23 5156.export
+-rw-r--r-- 1 root root      332 Sep 27 03:33 5394.export
+-rw-r--r-- 1 root root      333 Sep 27 03:44 5653.export
+-rw-r--r-- 1 root root      333 Sep 27 03:54 5940.export
+-rw-r--r-- 1 root root      333 Sep 27 04:05 6186.export
+-rw-r--r-- 1 root root      333 Sep 27 04:15 6430.export
+-rw-r--r-- 1 root root      333 Sep 27 04:26 6810.export
+drwxr-xr-x 2 root root     4096 Sep 27 01:49 BASE_PREC
+drwxr-xr-x 2 root root     4096 Sep 27 00:42 REPE_IN
+drwxr-xr-x 2 root root     4096 Sep 27 00:42 REPE_OUT
+-rw-r--r-- 1 root root      287 Sep 27 04:26 __timer__
+-rw-r--r-- 1 root root     3363 Sep 27 04:36 fort.15
+-rw-r--r-- 1 root root 15053951 Sep 24 18:46 fort.20
+-rw-r--r-- 1 root root   594397 Sep 27 04:36 fort.6
+-rw-r--r-- 1 root root        0 Sep 27 00:42 fort.8
+-rw-r--r-- 1 root root        0 Sep 27 00:42 fort.9
+-rw-r--r-- 1 root root      251 Sep 27 04:26 pick.code_aster.infos
+-rw-r--r-- 1 root root    12173 Sep 27 04:26 pick.code_aster.objects
+-rw-r--r-- 1 root root      237 Sep 27 04:26 pick.code_aster.sha
+-rw-r--r-- 1 root root     4070 Sep 27 00:42 v8c100_V_s00.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 01:49 v8c100_V_s01.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 02:06 v8c100_V_s02.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 02:23 v8c100_V_s03.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 02:34 v8c100_V_s04.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 02:48 v8c100_V_s05.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 02:58 v8c100_V_s06.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 03:12 v8c100_V_s07.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 03:23 v8c100_V_s08.comm.changed.py
+-rw-r--r-- 1 root root     2473 Sep 27 03:33 v8c100_V_s09.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 03:44 v8c100_V_s10.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 03:54 v8c100_V_s11.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 04:05 v8c100_V_s12.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 04:15 v8c100_V_s13.comm.changed.py
+-rw-r--r-- 1 root root     2474 Sep 27 04:26 v8c100_V_s14.comm.changed.py
+
+REPE_OUT:
+total 0
+
+
+# ------------------------------------------------------------------------------
+Copying results
+copying (shutil) 'fort.6' to '/home/user/aas-corner-fe/jobs/v8c100_V.mess'...
+
+# ------------------------------------------------------------------------------
+Execution summary
+                                      cpu     system    cpu+sys    elapsed
+--------------------------------------------------------------------------------
+Preparation of environment           0.00       0.00       0.00       0.01
+Execution of code_aster          11726.96    3051.08   14778.04   14008.97
+Copying results                      0.00       0.00       0.00       0.00
+--------------------------------------------------------------------------------
+Total                            11726.96    3051.08   14778.04   14008.98
+--------------------------------------------------------------------------------
+
+------------------------------------------------------------
+--- DIAGNOSTIC JOB : <A>_ALARM
+------------------------------------------------------------
+
