@@ -42,7 +42,7 @@ jobs:
           git config user.name aas-fe; git config user.email aas-fe@adit.org.il
           if [ -f wd/${{ matrix.job }}/next ]; then
             git fetch -q origin fe/${{ matrix.job }} && git checkout -B fe/${{ matrix.job }} FETCH_HEAD   # resume: keep the curve
-            git checkout origin/main -- stepper.sh .github ci || true
+            git checkout origin/main -- stepper.sh .github ci jobs || true
           else
             git checkout -B fe/${{ matrix.job }}; git push -f -q origin HEAD:fe/${{ matrix.job }}
           fi
