@@ -260,3 +260,283 @@ model = AFFE_MODELE(AFFE=(_F(GROUP_MA=('CONC', 'HZ'),
 
 Sur les 70801 mailles du maillage 00000001, on a demandé l'affectation de 67332, on a pu en affecter
 67332.
+Modélisation     Formulation      Type maille  Élément fini     Nombre
+3D               _                TETRA10      MECA_TETRA10     11610
+3D_GRAD_VARI     _                TETRA10      MVCA_TETRA10     55722
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.05      0.00      0.04
+# Résultat commande #0004 (AFFE_MODELE): model ('<00000002>') de type <Model>
+# Mémoire (Mo) :  1411.36 /  1268.38 /   230.73 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.39s (syst:        0.01s, elaps:        0.40s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt19
+# ----------------------------------------------------------------------------------------------
+# Commande #0005 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 19
+mat = DEFI_MATER_GC(ENDO_FISS_EXP=_F(COEF_RIGI_MINI=0.0,
+                                     E=32836.56803133079,
+                                     FC=38.0,
+                                     FT=2.896468153816889,
+                                     GF=0.14050245330952899,
+                                     LARG_BANDE=12,
+                                     NU=0.2,
+                                     P=1.5,
+                                     REST_RIGI_FC=0.0),
+                    INFO=1)
+
+# Résultat commande #0005 (DEFI_MATER_GC): mat ('<00000003>') de type <Material>
+# Mémoire (Mo) :  1411.36 /  1268.38 /   230.73 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.01s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt20
+# ----------------------------------------------------------------------------------------------
+# Commande #0007 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 20
+matH = DEFI_MATER_GC(ENDO_FISS_EXP=_F(COEF_RIGI_MINI=0.0,
+                                      E=32836.56803133079,
+                                      FC=76.0,
+                                      FT=2.896468153816889,
+                                      GF=0.14050245330952899,
+                                      LARG_BANDE=12,
+                                      NU=0.2,
+                                      P=1.5,
+                                      REST_RIGI_FC=0.0),
+                     INFO=1)
+
+# Résultat commande #0007 (DEFI_MATER_GC): matH ('<00000004>') de type <Material>
+# Mémoire (Mo) :  1411.36 /  1268.38 /   230.73 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt21
+# ----------------------------------------------------------------------------------------------
+# Commande #0009 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 21
+matHH = DEFI_MATERIAU(ELAS=_F(B_ENDOGE=0.0,
+                              COEF_AMOR=1.0,
+                              E=32836.56803133079,
+                              K_DESSIC=0.0,
+                              NU=0.2),
+                      INFO=1)
+
+# Résultat commande #0009 (DEFI_MATERIAU): matHH ('<00000005>') de type <Material>
+# Mémoire (Mo) :  1411.36 /  1268.38 /   230.73 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0009   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt22
+# ----------------------------------------------------------------------------------------------
+# Commande #0010 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 22
+stl = DEFI_MATERIAU(ELAS=_F(B_ENDOGE=0.0,
+                            COEF_AMOR=1.0,
+                            E=210000.0,
+                            K_DESSIC=0.0,
+                            NU=0.3),
+                    INFO=1)
+
+# Résultat commande #0010 (DEFI_MATERIAU): stl ('<00000006>') de type <Material>
+# Mémoire (Mo) :  1411.36 /  1268.38 /   230.73 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0010   user+syst:        0.01s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt23
+# ----------------------------------------------------------------------------------------------
+# Commande #0011 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 23
+slvm = DEFI_MATERIAU(ELAS=_F(B_ENDOGE=0.0,
+                             COEF_AMOR=1.0,
+                             E=10.0,
+                             K_DESSIC=0.0,
+                             NU=0.3),
+                     INFO=1)
+
+# Résultat commande #0011 (DEFI_MATERIAU): slvm ('<00000007>') de type <Material>
+# Mémoire (Mo) :  1411.36 /  1268.38 /   230.73 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0011   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt24
+# ----------------------------------------------------------------------------------------------
+# Commande #0012 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 24
+fmat = AFFE_MATERIAU(AFFE=(_F(GROUP_MA='CONC',
+                              MATER=mat),
+                           _F(GROUP_MA='HZ',
+                              MATER=matH),
+                           _F(GROUP_MA='HZH',
+                              MATER=matHH),
+                           _F(GROUP_MA='STEEL',
+                              MATER=stl),
+                           _F(GROUP_MA='SLV',
+                              MATER=slvm)),
+                     INFO=1,
+                     MAILLAGE=mesh)
+
+# Résultat commande #0012 (AFFE_MATERIAU): fmat ('<00000008>') de type <MaterialField>
+# Mémoire (Mo) :  1411.36 /  1269.09 /   230.73 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0012   user+syst:        0.01s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt25
+# ----------------------------------------------------------------------------------------------
+# Commande #0013 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 25
+fix = AFFE_CHAR_MECA(DDL_IMPO=(_F(DZ=0.0,
+                                  GROUP_MA='SYMZ'),
+                               _F(DX=0.0,
+                                  GROUP_MA='FARX'),
+                               _F(DY=0.0,
+                                  GROUP_MA='FARY')),
+                     DOUBLE_LAGRANGE='OUI',
+                     INFO=1,
+                     MODELE=model,
+                     SYNTAXE='NON',
+                     VERI_AFFE='OUI',
+                     VERI_NORM='OUI')
+
+# Résultat commande #0013 (AFFE_CHAR_MECA): fix ('<00000009>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :  1411.36 /  1279.44 /   238.98 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0013   user+syst:        0.07s (syst:        0.00s, elaps:        0.08s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt29
+# ----------------------------------------------------------------------------------------------
+# Commande #0014 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 29
+load = AFFE_CHAR_MECA(DDL_IMPO=(_F(DX=-1,
+                                   GROUP_MA='HEADT'),
+                                _F(DX=-1,
+                                   GROUP_MA='HEADV')),
+                      DOUBLE_LAGRANGE='OUI',
+                      INFO=1,
+                      MODELE=model,
+                      SYNTAXE='NON',
+                      VERI_AFFE='OUI',
+                      VERI_NORM='OUI')
+
+# Résultat commande #0014 (AFFE_CHAR_MECA): load ('<0000000a>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :  1411.36 /  1287.42 /   247.04 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0014   user+syst:        0.01s (syst:        0.01s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt30
+# ----------------------------------------------------------------------------------------------
+# Commande #0015 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 30
+ramp = DEFI_FONCTION(INFO=1,
+                     INTERPOL='LIN',
+                     NOM_PARA='INST',
+                     NOM_RESU='TOUTRESU',
+                     PROL_DROITE='EXCLU',
+                     PROL_GAUCHE='EXCLU',
+                     VALE=(0.0, 0.0, 0.4, 0.4),
+                     VERIF='CROISSANT')
+
+# Résultat commande #0015 (DEFI_FONCTION): ramp ('<0000000b>') de type <Function>
+# Mémoire (Mo) :  1411.36 /  1287.42 /   247.04 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0015   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt31
+# ----------------------------------------------------------------------------------------------
+# Commande #0016 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 31
+steps = DEFI_LIST_REEL(DEBUT=0.0,
+                       INFO=1,
+                       INTERVALLE=_F(JUSQU_A=0.4,
+                                     NOMBRE=20))
+
+# Résultat commande #0016 (DEFI_LIST_REEL): steps ('<0000000c>') de type <ListOfFloats>
+# Mémoire (Mo) :  1411.36 /  1287.42 /   247.04 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0016   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt32
+# ----------------------------------------------------------------------------------------------
+# Commande #0017 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 32
+times = DEFI_LIST_INST(DEFI_LIST=_F(LIST_INST=steps),
+                       ECHEC=_F(ACTION='DECOUPE',
+                                EVENEMENT='ERREUR',
+                                SUBD_METHODE='MANUEL',
+                                SUBD_NIVEAU=10,
+                                SUBD_PAS=2,
+                                SUBD_PAS_MINI=0.0),
+                       INFO=1,
+                       METHODE='MANUEL')
+
+Gestion manuelle de la liste d'instants.
+La liste d'instants contient 21 pas de temps et le pas de temps minimum vaut          0.02.
+Il y a 1 événements.
+L'événement 1 est pour capturer les erreurs.
+Si cet événement se déclenche, on découpe le pas de temps.
+La découpe du pas de temps est manuelle.
+On découpe le pas de temps en 2 incréments jusqu'à ce que le niveau atteigne 10.
+# Résultat commande #0017 (DEFI_LIST_INST): times ('<0000000d>') de type <TimesList>
+# Dépend de :
+# - steps ('<0000000c>') de type <ListOfFloats>
+# Mémoire (Mo) :  1411.36 /  1287.42 /   247.04 /   218.36 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0017   user+syst:        0.01s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt65
+# ----------------------------------------------------------------------------------------------
+# Commande #0018 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s00.comm.changed.py, ligne 65
+res = STAT_NON_LINE(AFFICHAGE=_F(INFO_RESIDU='NON',
+                                 INFO_TEMPS='NON'),
+                    ARCHIVAGE=_F(CHAM_EXCLU=('RESI_NOEU', 'RESI_RELA_NOEU'),
+                                 PAS_ARCH=1),
+                    CHAM_MATER=fmat,
+                    COMPORTEMENT=(_F(DEFORMATION='PETIT',
+                                     GROUP_MA=('CONC', 'HZ'),
+                                     ITER_CPLAN_MAXI=10,
+                                     ITER_INTE_MAXI=20,
+                                     ITER_INTE_PAS=0,
+                                     PARM_THETA=1.0,
+                                     REGU_VISC='NON',
+                                     RELATION='ENDO_FISS_EXP',
+                                     RESI_CPLAN_RELA=1e-06,
+                                     RESI_INTE=1e-06),
+                                  _F(DEFORMATION='PETIT',
+                                     GROUP_MA=('STEEL', 'SLV', 'HZH'),
+                                     ITER_CPLAN_MAXI=10,
+                                     ITER_INTE_MAXI=20,
+                                     ITER_INTE_PAS=0,
+                                     PARM_THETA=1.0,
+                                     REGU_VISC='NON',
+                                     RELATION='ELAS',
+                                     RESI_CPLAN_RELA=1e-06,
+                                     RESI_INTE=1e-06)),
+                    CONVERGENCE=_F(ARRET='OUI',
+                                   ITER_GLOB_ELAS=25,
+                                   ITER_GLOB_MAXI=50,
+                                   RESI_GLOB_RELA=0.0001,
+                                   VERIF='TOUT'),
+                    EXCIT=(_F(CHARGE=fix,
+                              TYPE_CHARGE='FIXE_CSTE'),
+                           _F(CHARGE=load,
+                              FONC_MULT=ramp,
+                              TYPE_CHARGE='FIXE_CSTE')),
+                    INCREMENT=_F(CRITERE='RELATIF',
+                                 INST_FIN=0.02,
+                                 LIST_INST=times,
+                                 NUME_INST_INIT=0,
+                                 PRECISION=1e-06),
+                    MESURE=_F(TABLE='NON'),
+                    METHODE='NEWTON',
+                    MODELE=model,
+                    NEWTON=_F(MATRICE='TANGENTE',
+                              MATR_RIGI_SYME='NON',
+                              REAC_INCR=1,
+                              REAC_ITER=1,
+                              REAC_ITER_ELAS=0),
+                    SOLVEUR=_F(ACCELERATION='AUTO',
+                               ELIM_LAGR='LAGR2',
+                               FILTRAGE_MATRICE=-1.0,
+                               GESTION_MEMOIRE='OUT_OF_CORE',
+                               LOW_RANK_SEUIL=0.0,
+                               MATR_DISTRIBUEE='NON',
+                               METHODE='MUMPS',
+                               MIXER_PRECISION='NON',
+                               NB_RHS=1,
+                               NPREC=10,
+                               PCENT_PIVOT=35,
+                               POSTTRAITEMENTS='AUTO',
+                               PRETRAITEMENTS='AUTO',
+                               REDUCTION_MPI=0,
+                               RENUM='AUTO',
+                               RESI_RELA=-1.0,
+                               STOP_SINGULIER='OUI',
+                               TYPE_RESOL='AUTO'))
+
