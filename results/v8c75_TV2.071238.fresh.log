@@ -1,0 +1,265 @@
+WARNING: If MPI_Abort is called during execution, result files could not be copied.
+Running: /root/mm/envs/aster/bin/run_aster -w /home/user/aas-corner-fe/wd/v8c75_TV2 --status-file /root/.tmp_run_aster/run_aster_qa8s7m1g/__status__ --no-mpi /root/.tmp_run_aster/run_aster_qa8s7m1g/v8c75_TV2.0
+
+# ------------------------------------------------------------------------------
+Execution of code_aster
+
+# ------------------------------------------------------------------------------
+Prepare environment in /home/user/aas-corner-fe/wd/v8c75_TV2
+
+# ------------------------------------------------------------------------------
+Command file #1 / 20
+
+Content of the file to execute:
+# coding=utf-8
+# original filename
+__file__ = r"/home/user/aas-corner-fe/jobs/v8c75_TV2_s00.comm"
+
+
+# temporarly added for compatibility with code_aster legacy
+from math import *
+
+import code_aster
+from code_aster.Commands import *
+from code_aster import CA
+
+DEBUT(LANG='EN', PAR_LOT='NON')
+mesh=LIRE_MAILLAGE(UNITE=20, FORMAT='MED')
+mesh=DEFI_GROUP(reuse=mesh, MAILLAGE=mesh, CREA_GROUP_NO=_F(GROUP_MA=('SYMZ','FARX','FARY','HEADT','HEADV')))
+model=AFFE_MODELE(MAILLAGE=mesh, AFFE=(
+    _F(GROUP_MA=('CONC','HZ'), PHENOMENE='MECANIQUE', MODELISATION='3D_GRAD_VARI'),
+    _F(GROUP_MA=('STEEL','SLV','HZH'), PHENOMENE='MECANIQUE', MODELISATION='3D')))
+mat=DEFI_MATER_GC(ENDO_FISS_EXP=_F(E=32836.56803133079, NU=0.2, FT=2.896468153816889, FC=38.0, GF=0.14050245330952899, P=1.5, LARG_BANDE=12, REST_RIGI_FC=0.))
+matH=DEFI_MATER_GC(ENDO_FISS_EXP=_F(E=32836.56803133079, NU=0.2, FT=2.896468153816889, FC=76.0, GF=0.14050245330952899, P=1.5, LARG_BANDE=12, REST_RIGI_FC=0.))
+matHH=DEFI_MATERIAU(ELAS=_F(E=32836.56803133079, NU=0.2))
+stl=DEFI_MATERIAU(ELAS=_F(E=210000., NU=0.3))
+slvm=DEFI_MATERIAU(ELAS=_F(E=10., NU=0.3))
+fmat=AFFE_MATERIAU(MAILLAGE=mesh, AFFE=(_F(GROUP_MA='CONC', MATER=mat), _F(GROUP_MA='HZ', MATER=matH), _F(GROUP_MA='HZH', MATER=matHH), _F(GROUP_MA='STEEL', MATER=stl), _F(GROUP_MA='SLV', MATER=slvm)))
+fix=AFFE_CHAR_MECA(MODELE=model, DDL_IMPO=(_F(GROUP_MA='SYMZ', DZ=0.), _F(GROUP_MA='FARX', DX=0.), _F(GROUP_MA='FARY', DY=0.)))
+grp=[]
+if 'T' in 'TV2': grp.append('HEADT')
+if 'V' in 'TV2': grp.append('HEADV')
+load=AFFE_CHAR_MECA(MODELE=model, DDL_IMPO=tuple(_F(GROUP_MA=g, DX=-(2.0 if (g=='HEADV' and '2' in 'TV2') else 1.0)) for g in grp))
+ramp=DEFI_FONCTION(NOM_PARA='INST', VALE=(0.,0.,0.4,0.4))
+steps=DEFI_LIST_REEL(DEBUT=0., INTERVALLE=_F(JUSQU_A=0.4, NOMBRE=20))
+times=DEFI_LIST_INST(DEFI_LIST=_F(LIST_INST=steps), ECHEC=_F(EVENEMENT='ERREUR', ACTION='DECOUPE', SUBD_METHODE='MANUEL', SUBD_PAS=2, SUBD_NIVEAU=10))
+
+LOADS='TV2'
+CURVE='/home/user/aas-corner-fe/jobs/../results/v8c75_TV2.curve'
+common=dict(MODELE=model, CHAM_MATER=fmat, EXCIT=(_F(CHARGE=fix), _F(CHARGE=load, FONC_MULT=ramp)),
+        COMPORTEMENT=(_F(RELATION='ENDO_FISS_EXP', GROUP_MA=('CONC','HZ')), _F(RELATION='ELAS', GROUP_MA=('STEEL','SLV','HZH'))),
+        NEWTON=_F(MATRICE='TANGENTE', REAC_ITER=1),
+        CONVERGENCE=_F(RESI_GLOB_RELA=1.E-4, ITER_GLOB_MAXI=50), ARCHIVAGE=_F(PAS_ARCH=1), SOLVEUR=_F(METHODE='MUMPS', GESTION_MEMOIRE='OUT_OF_CORE', NPREC=10))
+import os, re
+tcur=0.0; peak=0.0; stopped=False
+if os.path.exists(CURVE):
+    for line in open(CURVE):
+        m=re.match(r'CURVE\s+(\S+)\s+(\S+)', line)
+        if m:
+            tcur=max(tcur, float(m.group(1))); peak=max(peak, float(m.group(2)))
+        if line.startswith('STOP'): stopped=True
+def reac(res, t):
+    r2=CALC_CHAMP(RESULTAT=res, FORCE='REAC_NODA', INST=t)
+    vals={}
+    for g in ('HEADT','HEADV'):
+        try:
+            tb=POST_RELEVE_T(ACTION=_F(OPERATION='EXTRACTION', INTITULE='R', RESULTAT=r2, NOM_CHAM='REAC_NODA',
+                                       GROUP_NO=g, RESULTANTE='DX', INST=t)).EXTR_TABLE().values()
+            vals[g]=-tb['DX'][-1]*2
+        except Exception:
+            vals[g]=0.
+    DETRUIRE(NOM=r2)
+    return vals
+TARGETS=[0.02]
+for tn in TARGETS:
+    if stopped or tn <= tcur+1e-9: continue
+    try:
+        if tcur < 1e-12 and '1'=='1':
+            res=STAT_NON_LINE(INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+        else:
+            res=STAT_NON_LINE(reuse=res, ETAT_INIT=_F(EVOL_NOLI=res), INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+    except Exception as exc:
+        print('AASSTOP at', tcur, exc, flush=True)
+        open(CURVE,'a').write('STOP solver %g\n'%tcur); stopped=True; break
+    tcur=tn
+    v=reac(res, tcur)
+    tot=(v['HEADT'] if 'T' in LOADS else 0.)+(v['HEADV'] if 'V' in LOADS else 0.)
+    peak=max(peak, tot)
+    open(CURVE,'a').write('CURVE %g %g %g %g\n'%(tcur,tot,v['HEADT'],v['HEADV']))
+    print('AASCURVE %g %g %g %g'%(tcur,tot,v['HEADT'],v['HEADV']), flush=True)
+    if tot < 0.9*peak:
+        open(CURVE,'a').write('STOP peak %g\n'%peak); stopped=True; break
+FIN()
+
+
+
+# ------------------------------------------------------------------------------
+Command line #1:
+    ulimit -c unlimited ; ulimit -t 100000 ; ( /root/mm/envs/aster/bin/python3 "v8c75_TV2_s00.comm.changed.py" --link="F::mmed::/home/user/aas-corner-fe/jobs/../mesh/m8_h100_d16_ct75_e75_T.med::D::20" --memory 3000.0 --numthreads 4 --tpmax 20000 ; echo $? > _exit_code_ ) 2>&1 | tee -a fort.6
+setting '--memory' value to 2700.00 MB (keyword RESERVE_MEMOIRE)
+copying (shutil) '/home/user/aas-corner-fe/jobs/../mesh/m8_h100_d16_ct75_e75_T.med' to 'fort.20'...
+Ouverture en écriture du fichier ./vola.1
+
+<INFO> Démarrage de l'exécution.
+
+                       -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --                       
+                               Version 18.1.6 modifiée le 14/09/2026                                
+                                    révision n/a - branche 'n/a'                                    
+                                     Copyright EDF 1991 - 2026                                      
+                                                                                                    
+                              Exécution du : Mon Sep 28 07:12:41 2026                               
+                                       Nom de la machine : vm                                       
+                                        Architecture : 64bit                                        
+                                    Type de processeur : x86_64                                     
+                Système d'exploitation : Linux-6.18.44-fc-v37-x86_64-with-glibc2.39                 
+                                  Langue des messages : C (UTF-8)                                   
+                                     Version de Python : 3.14.7                                     
+                                      Version de NumPy : 2.5.3                                      
+                                  Version de MEDCoupling : 9.16.0                                   
+                                     Parallélisme MPI : inactif                                     
+                                    Parallélisme OpenMP : actif                                     
+                              Nombre de processus OpenMP utilisés : 4                               
+                                Version de la librairie HDF5 : 2.2.0                                
+                                Version de la librairie MED : 4.2.0                                 
+                               Version de la librairie MFront : 5.1.0                               
+                               Version de la librairie MUMPS : 5.8.2                                
+                                  Librairie PETSc : non disponible                                  
+                              Version de la librairie SCOTCH : 7.0.11                               
+
+starting the execution...
+/home/user/aas-corner-fe/wd/v8c75_TV2/v8c75_TV2_s00.comm.changed.py:13: DeprecationWarning: This feature is obsolete, 'PAR_LOT' has been removed.
+  DEBUT(LANG='EN', PAR_LOT='NON')
+Valeur initiale du temps CPU maximum =   20000 secondes
+  Valeur du temps CPU maximum passé aux commandes =   18000 secondes
+  Réserve CPU prévue = 2000 secondes
+
+Ouverture en écriture du fichier ./glob.1
+
+Ouverture en écriture du fichier ./vola.1
+
+Ouverture en lecture du fichier /root/mm/envs/aster/lib/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Créée avec la version                   :  18.01.06
+     Nombre d'enregistrements utilisés       :  54
+     Nombre d'enregistrements maximum        :  512
+     Nombre d'enregistrements par fichier    :  512
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre d'identificateurs utilisés       :  123
+     Taille maximum du répertoire            :  300
+     Pourcentage d'utilisation du répertoire :  41 %
+
+Ouverture en lecture du fichier /root/mm/envs/aster/lib/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Nombre d'enregistrements utilisés       :  54
+     Nombre d'enregistrements maximum        :  512
+     Nombre d'enregistrements par fichier    :  512
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  72
+     Volume des accès en lecture             :         56.25 Mo.
+     Nombre total d'accès en écriture        :  0
+     Volume des accès en écriture            :          0.00 Mo.
+     Nombre d'identificateurs utilisés       :  123
+     Taille maximum du répertoire            :  300
+     Pourcentage d'utilisation du répertoire :  41 %
+
+Relecture des catalogues des éléments faite.
+
+Fin de lecture (durée  0.589004  s.) 
+
+                      Mémoire limite pour l'allocation dynamique : 3258.87 Mo                       
+                        ajouté à l'initialisation du processus : 1121.16 Mo                         
+                               Limite cible du processus : 4380.03 Mo                               
+                         Taille limite des fichiers d'échange : 2048.00 Go                          
+# Mémoire (Mo) :  1121.16 /  1111.85 /   216.07 /   186.93 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.07s (syst:        6.93s, elaps:        7.16s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt14
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de /home/user/aas-corner-fe/wd/v8c75_TV2/v8c75_TV2_s00.comm.changed.py, ligne 14
+mesh = LIRE_MAILLAGE(FORMAT='MED',
+                     INFO=1,
+                     INFO_MED=0,
+                     PARTITIONNEUR='SANS',
+                     UNITE=20,
+                     VERI_MAIL=_F(APLAT=0.001,
+                                  VERIF='OUI'))
+
+Nom MED du maillage : untitled
+
+
+------------ MAILLAGE 00000001 - IMPRESSIONS NIVEAU  1 ------------
+
+
+NOMBRE DE NOEUDS                      111469
+
+NOMBRE DE MAILLES                      83023
+                              TRIA6                3773
+                              TETRA10             79250
+
+NOMBRE DE GROUPES DE MAILLES              10
+
+--------------------------------------------------------------------------------
+
+Vérification du maillage.
+
+# Résultat commande #0002 (LIRE_MAILLAGE): mesh ('<00000001>') de type <Mesh>
+# Mémoire (Mo) :  1464.10 /  1134.33 /   229.69 /   191.60 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        1.26s (syst:        3.73s, elaps:        5.10s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt15
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de /home/user/aas-corner-fe/wd/v8c75_TV2/v8c75_TV2_s00.comm.changed.py, ligne 15
+mesh = DEFI_GROUP(ALARME='OUI',
+                  CREA_GROUP_NO=_F(CRIT_NOEUD='TOUS',
+                                   GROUP_MA=('SYMZ', 'FARX', 'FARY', 'HEADT', 'HEADV')),
+                  MAILLAGE=mesh,
+                  reuse=mesh)
+
+
+
+NOMBRE  DE GROUPES DE NOEUDS CREES :      5
+=======================================
+
+               ------------------------------------------------------
+               !         NOM DU GROUPE         ! NBRE DE NOEUDS DU  !
+               !            NOEUDS             !      GROUPE_NO     !
+               ------------------------------------------------------
+               !  SYMZ                         !      7075          !
+               !  FARX                         !       257          !
+               !  FARY                         !       257          !
+               !  HEADT                        !       122          !
+               !  HEADV                        !        15          !
+               ------------------------------------------------------
+
+# Résultat commande #0003 (DEFI_GROUP): mesh ('<00000001>') de type <Mesh>
+# Mémoire (Mo) :  1464.10 /  1134.33 /   229.69 /   191.60 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.02s (syst:        0.00s, elaps:        0.02s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt16
+# ----------------------------------------------------------------------------------------------
+# Commande #0004 de /home/user/aas-corner-fe/wd/v8c75_TV2/v8c75_TV2_s00.comm.changed.py, ligne 16
+model = AFFE_MODELE(AFFE=(_F(GROUP_MA=('CONC', 'HZ'),
+                             MODELISATION='3D_GRAD_VARI',
+                             PHENOMENE='MECANIQUE'),
+                          _F(GROUP_MA=('STEEL', 'SLV', 'HZH'),
+                             MODELISATION='3D',
+                             PHENOMENE='MECANIQUE')),
+                    DISTRIBUTION=_F(METHODE='SOUS_DOMAINE',
+                                    PARTITIONNEUR='METIS'),
+                    INFO=1,
+                    MAILLAGE=mesh,
+                    VERI_FORMULATION_IFS='OUI',
+                    VERI_JACOBIEN='OUI',
+                    VERI_NORM_IFS='OUI',
+                    VERI_PLAN='OUI')
+
+Sur les 83023 mailles du maillage 00000001, on a demandé l'affectation de 79250, on a pu en affecter
+79250.
+Modélisation     Formulation      Type maille  Élément fini     Nombre
+3D               _                TETRA10      MECA_TETRA10     11844
+3D_GRAD_VARI     _                TETRA10      MVCA_TETRA10     67406
