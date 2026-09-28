@@ -26,7 +26,7 @@ jobs:
       - name: mesh
         run: |
           export PATH=$HOME/mm/envs/aster/bin:$PATH
-          cd mesh && python3 ../mkmesh.py ${{ matrix.c }} m8_h100_d16_ct${{ matrix.c }}_e${{ matrix.c }}.med
+          mkdir -p mesh && cd mesh && python3 ../mkmesh.py ${{ matrix.c }} m8_h100_d16_ct${{ matrix.c }}_e${{ matrix.c }}.med
       - name: run (one checkpointed step per call, results pushed to branch fe/${{ matrix.job }})
         run: |
           git config user.name aas-fe; git config user.email aas-fe@adit.org.il
