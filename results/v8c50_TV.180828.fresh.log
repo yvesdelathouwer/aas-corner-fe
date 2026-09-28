@@ -6353,3 +6353,32 @@ Instant de calcul:  1.512500000000e-01 - Niveau de découpe: 5
 |    10        X | 5.23758E-04  X | 3.16888E-01    |TANGENTE (NOSYM)|
 |    11        X | 3.81177E-04  X | 2.30653E-01    |TANGENTE (NOSYM)|
 |    12        X | 1.01412E-03  X | 6.13748E-01    |TANGENTE (NOSYM)|
+|    13        E |              X |                |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+<Erreur> Échec dans l'intégration de la loi de comportement
+
+<Action> On essaie de découper le pas de temps.
+
+On utilise la découpe manuelle.
+Découpe uniforme à partir de l'instant  1.500000000000e-01 en 2 pas de temps.
+(soit un incrément constant de  6.250000000000e-04)
+<Action> On découpe le pas de temps.
+Temps CPU consommé dans ce pas de temps    : 16 min 36 s
+
+* Nombre d'itérations de Newton                     : 14
+* Temps total intégration comportement              : 54.453 s (15 intégrations)
+* Temps total factorisation matrice                 : 13 min 24 s (14 factorisations)
+* Temps construction second membre                  : 0.560 s
+* Temps total résolution K.U=F                      : 49.156 s (14 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 1 min 27 s
+Mémoire (Mo) :  6131.05 /  3352.48 /  2533.09 /   981.59 (VmPeak / VmSize / Optimum / Minimum)
+
+---------------------------------------------------------------------
+Instant de calcul:  1.506250000000e-01 - Niveau de découpe: 6
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
