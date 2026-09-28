@@ -5,7 +5,7 @@ CURVE='/home/claude/aas-corner-fe/jobs/g150_TV.curve'
 common=dict(MODELE=model, CHAM_MATER=fmat, EXCIT=(_F(CHARGE=fix), _F(CHARGE=load, FONC_MULT=ramp)),
         COMPORTEMENT=(_F(RELATION='ENDO_FISS_EXP', GROUP_MA=('CONC','HZ')), _F(RELATION='ELAS', GROUP_MA=('STEEL','SLV','HZH'))),
         NEWTON=_F(MATRICE='TANGENTE', REAC_ITER=1),
-        CONVERGENCE=_F(RESI_GLOB_RELA=1.E-4, ITER_GLOB_MAXI=30), ARCHIVAGE=_F(PAS_ARCH=1), SOLVEUR=_F(METHODE='MUMPS', GESTION_MEMOIRE='OUT_OF_CORE'))
+        CONVERGENCE=_F(RESI_GLOB_RELA=1.E-4, ITER_GLOB_MAXI=60), RECH_LINEAIRE=_F(METHODE='CORDE', ITER_LINE_MAXI=3), ARCHIVAGE=_F(PAS_ARCH=1), SOLVEUR=_F(METHODE='MUMPS', GESTION_MEMOIRE='OUT_OF_CORE'))
 import os, re
 tcur=0.0; peak=0.0; stopped=False
 if os.path.exists(CURVE):
@@ -26,7 +26,7 @@ def reac(res, t):
             vals[g]=0.
     DETRUIRE(NOM=r2)
     return vals
-TARGETS=[0.26]
+TARGETS=[0.13]
 for tn in TARGETS:
     if stopped or tn <= tcur+1e-9: continue
     try:

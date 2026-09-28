@@ -1,5 +1,5 @@
 P time_limit 20000
-P memory_limit 6500
+P memory_limit 6000
 P ncpus 2
 P mpi_nbcpu 1
 F comm /home/claude/aas-corner-fe/jobs/g40_TV_s00.comm D 1
