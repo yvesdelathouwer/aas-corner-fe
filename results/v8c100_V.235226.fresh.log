@@ -15475,3 +15475,516 @@ peak                     <class 'float'>
 stopped                  <class 'bool'>
 TARGETS                  <class 'list'>
 tn                       <class 'float'>
+res                      <class 'libaster.NonLinearResult'>
+v                        <class 'dict'>
+tot                      <class 'float'>
+line                     <class 'str'>
+# Mémoire (Mo) :  2562.35 /  2562.35 /  1722.95 /  1722.92 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.23s (syst:        1.11s, elaps:        1.34s)
+# ----------------------------------------------------------------------------------------------
+/home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s22.comm.changed.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/aas-corner-fe/jobs/../results/v8c100_V.curve' mode='r' encoding='UTF-8'>
+  for line in open(CURVE):
+
+.. _stg1_txt48
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de /home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s22.comm.changed.py, ligne 48
+res = STAT_NON_LINE(AFFICHAGE=_F(INFO_RESIDU='NON',
+                                 INFO_TEMPS='NON'),
+                    ARCHIVAGE=_F(CHAM_EXCLU=('RESI_NOEU', 'RESI_RELA_NOEU'),
+                                 PAS_ARCH=1),
+                    CHAM_MATER=fmat,
+                    COMPORTEMENT=(_F(DEFORMATION='PETIT',
+                                     GROUP_MA=('CONC', 'HZ'),
+                                     ITER_CPLAN_MAXI=10,
+                                     ITER_INTE_MAXI=20,
+                                     ITER_INTE_PAS=0,
+                                     PARM_THETA=1.0,
+                                     REGU_VISC='NON',
+                                     RELATION='ENDO_FISS_EXP',
+                                     RESI_CPLAN_RELA=1e-06,
+                                     RESI_INTE=1e-06),
+                                  _F(DEFORMATION='PETIT',
+                                     GROUP_MA=('STEEL', 'SLV', 'HZH'),
+                                     ITER_CPLAN_MAXI=10,
+                                     ITER_INTE_MAXI=20,
+                                     ITER_INTE_PAS=0,
+                                     PARM_THETA=1.0,
+                                     REGU_VISC='NON',
+                                     RELATION='ELAS',
+                                     RESI_CPLAN_RELA=1e-06,
+                                     RESI_INTE=1e-06)),
+                    CONVERGENCE=_F(ARRET='OUI',
+                                   ITER_GLOB_ELAS=25,
+                                   ITER_GLOB_MAXI=50,
+                                   RESI_GLOB_RELA=0.0001,
+                                   VERIF='TOUT'),
+                    ETAT_INIT=_F(EVOL_NOLI=res),
+                    EXCIT=(_F(CHARGE='<00000009>',
+                              TYPE_CHARGE='FIXE_CSTE'),
+                           _F(CHARGE='<0000000a>',
+                              FONC_MULT=ramp,
+                              TYPE_CHARGE='FIXE_CSTE')),
+                    INCREMENT=_F(CRITERE='RELATIF',
+                                 INST_FIN=0.69,
+                                 INST_INIT=0.6600000000000004,
+                                 LIST_INST=times,
+                                 PRECISION=1e-06),
+                    MESURE=_F(TABLE='NON'),
+                    METHODE='NEWTON',
+                    MODELE=model,
+                    NEWTON=_F(MATRICE='TANGENTE',
+                              MATR_RIGI_SYME='NON',
+                              REAC_INCR=1,
+                              REAC_ITER=1,
+                              REAC_ITER_ELAS=0),
+                    SOLVEUR=_F(ACCELERATION='AUTO',
+                               ELIM_LAGR='LAGR2',
+                               FILTRAGE_MATRICE=-1.0,
+                               GESTION_MEMOIRE='OUT_OF_CORE',
+                               LOW_RANK_SEUIL=0.0,
+                               MATR_DISTRIBUEE='NON',
+                               METHODE='MUMPS',
+                               MIXER_PRECISION='NON',
+                               NB_RHS=1,
+                               NPREC=10,
+                               PCENT_PIVOT=35,
+                               POSTTRAITEMENTS='AUTO',
+                               PRETRAITEMENTS='AUTO',
+                               REDUCTION_MPI=0,
+                               RENUM='AUTO',
+                               RESI_RELA=-1.0,
+                               STOP_SINGULIER='OUI',
+                               TYPE_RESOL='AUTO'),
+                    reuse=res)
+
+Liste des comportements
+
+Affecté sur 85588 éléments
+Relation                             : ENDO_FISS_EXP
+Déformation                          : PETIT
+Pas de régularisation visqueuse
+Pas de post-traitement à la fin du pas de temps
+Nombre total de variables internes   : 9
+V1 : ENDO
+V2 : INDIENDO
+V3 : ENDORIGI
+V4 : EPSEXX
+V5 : EPSEYY
+V6 : EPSEZZ
+V7 : EPSEXY
+V8 : EPSEXZ
+V9 : EPSEYZ
+Affecté sur 11341 éléments
+Relation                             : ELAS
+Déformation                          : PETIT
+Pas de régularisation visqueuse
+Pas de post-traitement à la fin du pas de temps
+Nombre total de variables internes   : 1
+V1 : VIDE
+Le système linéaire à résoudre a 455904 degrés de liberté:
+   - 438438 sont des degrés de liberté physiques
+     (ils sont portés par 135682 noeuds du maillage)
+   - 17466 sont les couples de paramètres de Lagrange associés
+     aux 8733 relations linéaires dualisées.
+La matrice est de taille 455904 équations.
+  Elle contient 23708355 termes non nuls si elle est symétrique et 46960806 termes non nuls si elle
+n'est pas symétrique.
+  Soit un taux de remplissage de   0.023 %.
+Lecture de l'état initial
+L'état initial a été récupéré dans la structure de données résultat de nom <0000000e> pour le numéro
+d'ordre 23 et à l'instant  6.600000000000e-01
+Le champ <DEPL> est lu dans ETAT_INIT dans la structure de données résultat donné dans la commande.
+Le champ <SIEF_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+Le champ <VARI_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+---------------------------------------------------------------------
+Instant de calcul:  6.900000000000e-01 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   4136 Mo  alors qu'il n'y a que 744 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 571 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     0        X | 1.30142E-03  X | 2.82953E+00    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   4136 Mo  alors qu'il n'y a que 381 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 572 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     1          | 5.01478E-05    | 1.09036E-01    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  5.014780504014e-05 au noeud et degré de liberté <130575 
+DY>
+Temps CPU consommé dans ce pas de temps    : 4 min 46 s
+
+* Nombre d'itérations de Newton                     : 2
+* Temps total intégration comportement              : 28.895 s (3 intégrations)
+* Temps total factorisation matrice                 : 3 min 19 s (2 factorisations)
+* Temps construction second membre                  : 0.758 s
+* Temps total résolution K.U=F                      : 33.341 s (2 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 23.639 s
+Mémoire (Mo) :  7371.79 /  4122.70 /  3364.61 /  2393.37 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  6.900000000000e-01 pour le numéro d'ordre 24
+Champ stocké <SIEF_ELGA> à l'instant  6.900000000000e-01 pour le numéro d'ordre 24
+Champ stocké <VARI_ELGA> à l'instant  6.900000000000e-01 pour le numéro d'ordre 24
+Champ stocké <COMPORTEMENT> à l'instant  6.900000000000e-01 pour le numéro d'ordre 24
+[100%] Instant calculé : 6.90000e-01, seul l'instant initial a été archivé
+Temps CPU consommé dans le calcul          : 4 min 46 s
+
+dont temps CPU "perdu" dans les découpes            : 0.000 s
+* Nombre de pas de temps                            : 1
+* Nombre d'itérations de Newton                     : 2
+* Temps dans l'archivage                            : 0.062 s
+* Temps dans le post-traitement                     : 0.000 s
+* Temps total intégration comportement              : 28.895 s (3 intégrations)
+* Temps total factorisation matrice                 : 3 min 19 s (2 factorisations)
+* Temps construction second membre                  : 0.758 s
+* Temps total résolution K.U=F                      : 33.341 s (2 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):    768.05    108.07    236.24
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):     52.10     20.47     52.06
+#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):     10.05      9.89     10.21
+# Résultat commande #0002 (STAT_NON_LINE): res ('<0000000e>') de type <NonLinearResult>
+# Mémoire (Mo) :  7371.79 /  3132.22 /  3364.61 /  2393.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:      700.82s (syst:      131.10s, elaps:      297.83s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt184
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de
+/root/mm/envs/aster/lib/python3.14/site-packages/code_aster/Supervis/ExecuteCommand.py, ligne 184
+CALC_CHAMP(CRITERE='RELATIF',
+           FORCE='REAC_NODA',
+           INFO=1,
+           INST=0.69,
+           PARALLELISME_TEMPS='NON',
+           PRECISION=1e-06,
+           RESULTAT=res)
+
+Le système linéaire à résoudre a 455904 degrés de liberté:
+   - 438438 sont des degrés de liberté physiques
+     (ils sont portés par 135682 noeuds du maillage)
+   - 17466 sont les couples de paramètres de Lagrange associés
+     aux 8733 relations linéaires dualisées.
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.55      0.01      0.56
+# Résultat commande #0003 (CALC_CHAMP): '<00000051>' de type <NonLinearResult>
+# Dépend de :
+# - model ('<00000002>') de type <Model>
+# - fmat ('<00000008>') de type <MaterialField>
+# Mémoire (Mo) :  7371.79 /  3132.22 /  3364.61 /  2393.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.89s (syst:        0.02s, elaps:        0.90s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt34
+# ----------------------------------------------------------------------------------------------
+# Commande #0004 de /home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s22.comm.changed.py, ligne 34
+tb = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                             FORMAT_C='MODULE',
+                             GROUP_NO='HEADT',
+                             INST=0.69,
+                             INTITULE='R',
+                             MOYE_NOEUD='OUI',
+                             NOM_CHAM='REAC_NODA',
+                             OPERATION='EXTRACTION',
+                             PRECISION=1e-06,
+                             REPERE='GLOBAL',
+                             RESULTANTE='DX',
+                             RESULTAT=r2),
+                   INFO=1)
+
+# Résultat commande #0004 (POST_RELEVE_T): tb ('<00000052>') de type <Table>
+# Mémoire (Mo) :  7371.79 /  3132.22 /  3364.61 /  2393.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt34
+# ----------------------------------------------------------------------------------------------
+# Commande #0005 de /home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s22.comm.changed.py, ligne 34
+tb = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                             FORMAT_C='MODULE',
+                             GROUP_NO='HEADV',
+                             INST=0.69,
+                             INTITULE='R',
+                             MOYE_NOEUD='OUI',
+                             NOM_CHAM='REAC_NODA',
+                             OPERATION='EXTRACTION',
+                             PRECISION=1e-06,
+                             REPERE='GLOBAL',
+                             RESULTANTE='DX',
+                             RESULTAT=r2),
+                   INFO=1)
+
+# Résultat commande #0005 (POST_RELEVE_T): tb ('<00000053>') de type <Table>
+# Mémoire (Mo) :  7371.79 /  3132.22 /  3364.61 /  2393.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt39
+# ----------------------------------------------------------------------------------------------
+# Commande #0006 de /home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s22.comm.changed.py, ligne 39
+DETRUIRE(INFO=1,
+         NOM=r2)
+
+# Mémoire (Mo) :  7371.79 /  3132.22 /  3364.61 /  2393.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.31s (syst:        0.00s, elaps:        0.08s)
+# ----------------------------------------------------------------------------------------------
+/home/user/aas-corner-fe/wd/v8c100_V/v8c100_V_s22.comm.changed.py:56: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/aas-corner-fe/jobs/../results/v8c100_V.curve' mode='a' encoding='UTF-8'>
+  open(CURVE,'a').write('CURVE %g %g %g %g\n'%(tcur,tot,v['HEADT'],v['HEADV']))
+AASCURVE 0.69 24090 -1.37926e-13 24090
+
+.. _stg1_txt76
+# ----------------------------------------------------------------------------------------------
+# Commande #0007 de /root/mm/envs/aster/lib/python3.14/site-packages/code_aster/CodeCommands/fin.py,
+ligne 76
+FIN(INFO_RESU='NON',
+    RETASSAGE='NON')
+
+Saving objects...
+pi                       <class 'float'>
+e                        <class 'float'>
+tau                      <class 'float'>
+inf                      <class 'float'>
+nan                      <class 'float'>
+mesh                     <class 'libaster.Mesh'>
+model                    <class 'libaster.Model'>
+mat                      <class 'libaster.Material'>
+matH                     <class 'libaster.Material'>
+matHH                    <class 'libaster.Material'>
+stl                      <class 'libaster.Material'>
+slvm                     <class 'libaster.Material'>
+fmat                     <class 'libaster.MaterialField'>
+fix                      <class 'libaster.MechanicalLoadReal'>
+grp                      <class 'list'>
+load                     <class 'libaster.MechanicalLoadReal'>
+ramp                     <class 'libaster.Function'>
+steps                    <class 'libaster.ListOfFloats'>
+times                    <class 'libaster.TimesList'>
+LOADS                    <class 'str'>
+CURVE                    <class 'str'>
+common                   <class 'dict'>
+tcur                     <class 'float'>
+peak                     <class 'float'>
+stopped                  <class 'bool'>
+TARGETS                  <class 'list'>
+tn                       <class 'float'>
+res                      <class 'libaster.NonLinearResult'>
+v                        <class 'dict'>
+tot                      <class 'float'>
+line                     <class 'str'>
+
+ ╔================================================================================================╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez choisies d'ignorer sont précédées de (*).                        ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║            FACTOR_75            émise    2 fois                                                ║
+ ╚================================================================================================╝
+
+ ---------------------------------------------------------------------------
+ Concepts de la base: G
+    Nom        Type                Taille (Mo)         Nombre      Nombre de
+                                                     d'objets       segments
+    TOTAL                              1811.05            914           1483
+  
+    00000001   MAILLAGE_SDASTER          14.63             34             70
+    00000002   MODELE_SDASTER            14.45             11             16
+    00000003   MATER_SDASTER              0.00             15             15
+    00000004   MATER_SDASTER              0.00             15             15
+    00000005   MATER_SDASTER              0.00              7              7
+    00000006   MATER_SDASTER              0.00              7              7
+    00000007   MATER_SDASTER              0.00              7              7
+    00000008   CHAM_MATER                 1.17              8             13
+    00000009   CHAR_MECA                 15.45             56             76
+    0000000a   CHAR_MECA                 11.40             56             76
+    0000000b   FONCTION_SDASTER           0.00              3              3
+    0000000c   LISTR8_SDASTER             0.00              6              6
+    0000000d   LIST_INST                  0.00              8              8
+    0000000e   EVOL_NOLI               1679.13            585            731
+    &FOZERO                               0.00              2              2
+    &&_NUM_C                              0.00              1              1
+    &CATA                                37.45             42            103
+    &&NMDOME                              0.00              2              2
+    00000039                              0.13              2             14
+    0000000f                              0.13              2             14
+    &&NMCH1P                             34.29              3              3
+    0000003f                              0.13              2             14
+    00000012                              0.13              2             14
+    00000042                              0.13              2             14
+    00000036                              0.13              2             14
+    00000024                              0.13              2             14
+    00000015                              0.13              2             14
+    00000018                              0.13              2             14
+    0000001b                              0.13              2             14
+    0000001e                              0.13              2             14
+    00000021                              0.13              2             14
+    00000045                              0.13              2             14
+    00000027                              0.13              2             14
+    0000002a                              0.13              2             14
+    00000030                              0.13              2             14
+    0000002d                              0.13              2             14
+    00000048                              0.13              2             14
+    00000033                              0.13              2             14
+    0000003c                              0.13              2             14
+    0000004b                              0.13              2             14
+    0000004e                              0.13              2             14
+    00000051                              0.13              2             14
+ (*) sous-objets non accessible directement
+ ---------------------------------------------------------------------------
+Nom de la base                          :  GLOBALE
+     Nombre d'enregistrements utilisés       :  2521
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  2952
+     Volume des accès en lecture             :       2306.25 Mo.
+     Nombre total d'accès en écriture        :  363
+     Volume des accès en écriture            :        283.59 Mo.
+     Nombre d'identificateurs utilisés       :  2272
+     Taille maximum du répertoire            :  4000
+     Pourcentage d'utilisation du répertoire :  56 %
+
+Nom de la base                          :  VOLATILE
+     Nombre d'enregistrements utilisés       :  3648
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  4974
+     Volume des accès en lecture             :       3885.94 Mo.
+     Nombre total d'accès en écriture        :  8184
+     Volume des accès en écriture            :       6393.75 Mo.
+     Nombre d'identificateurs utilisés       :  996
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  49 %
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                    2393.37 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                    3364.61 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :    7371.79 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                 3365  Mo.
+     TAILLE CUMULEE LIBEREE            :                 2104  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :              3215342
+     NOMBRE TOTAL DE LIBERATIONS       :              3215342
+     APPELS AU MECANISME DE LIBERATION :                   25
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                 8735  Mo.
+     VOLUME DES LECTURES               :                    3  Mo.
+     VOLUME DES ECRITURES              :                 5984  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :    2393.37 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :    3364.61 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :    7371.79 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : LU-28-SEPT-2026 03:16:15
+Signature of pickled file   : 581630be8fb8bd9be54aac1bfb1eb067bfe7749aad2badd80adc5be2ff39512a
+Signature of info file      : 198e10b2b20d6d5051e68288e1faec242c1e74cf7b2408c6cbed5a12adeff480
+Signature of Jeveux database: 0fafd7e34427f81a6e15ac03762925b49d99af8a2b2f01a9f3aec59ca1b1b7ef
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.23 :       1.11 :       1.34 :       1.34 *
+ * STAT_NON_LINE            :     700.82 :     131.10 :     831.92 :     297.83 *
+ * CALC_CHAMP               :       0.89 :       0.02 :       0.91 :       0.90 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * DETRUIRE                 :       0.31 :       0.00 :       0.31 :       0.08 *
+ * FIN                      :       0.51 :       0.28 :       0.79 :       0.92 *
+ *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . check syntax          :       0.04 :       0.00 :       0.04 :       0.01 *
+ *  . fortran               :     702.42 :     132.51 :     834.93 :     300.96 *
+ ********************************************************************************
+ * TOTAL_JOB                :     703.15 :     132.54 :     835.69 :     301.25 *
+ ********************************************************************************
+
+# Mémoire (Mo) :  7371.79 /  1366.75 /  3364.61 /  2393.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.51s (syst:        0.28s, elaps:        0.92s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_6845=0
+
+
+saving result databases to 'BASE_PREC'...
+execution ended (command file #23): <A>_ALARM
+Running: /root/mm/envs/aster/bin/run_aster -w /home/user/aas-corner-fe/wd/v8c100_V --status-file /root/.tmp_run_aster/run_aster_w5o6fgtn/__status__ --no-mpi /root/.tmp_run_aster/run_aster_w5o6fgtn/v8c100_V.23
+
+# ------------------------------------------------------------------------------
+Execution of code_aster
+
+# ------------------------------------------------------------------------------
+Prepare environment in /home/user/aas-corner-fe/wd/v8c100_V
+
+# ------------------------------------------------------------------------------
+Command file #24 / 25
