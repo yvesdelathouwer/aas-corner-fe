@@ -53,3 +53,5 @@
 2026-09-28T07:24:50Z RUN v8c50_TV (fresh, attempt 1)
 2026-09-28T10:08:53Z LOST v8c50_TV (container restart; last at 0.1503125 mm SUBD 7, wd lost)
 2026-09-28T10:08:53Z RUN v8c50_TV (fresh, attempt 1)
+2026-09-28T13:29:22Z LOST v8c50_TV (container restart; last at 0.15015625 mm SUBD 8, wd lost)
+2026-09-28T13:29:22Z RUN v8c50_TV (fresh, attempt 1)
