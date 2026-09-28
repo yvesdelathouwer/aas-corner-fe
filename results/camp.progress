@@ -61,3 +61,4 @@
 2026-09-28T18:08:28Z RUN v8c50_TV (fresh, attempt 1)
 2026-09-28T20:48:14Z LOST v8c50_TV (container restart; last at 0.15015625 mm SUBD 8, wd lost)
 2026-09-28T20:48:14Z RUN v8c50_TV (fresh, attempt 1)
+2026-09-28T23:52:26Z END v8c50_TV rc=0 11052s last=STOP peak 57343.2
