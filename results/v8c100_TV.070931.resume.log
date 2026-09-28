@@ -7160,3 +7160,507 @@ line                     <class 'str'>
 # ----------------------------------------------------------------------------------------------
 /home/user/aas-corner-fe/wd/v8c100_TV/v8c100_TV_s20.comm.changed.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/aas-corner-fe/jobs/../results/v8c100_TV.curve' mode='r' encoding='UTF-8'>
   for line in open(CURVE):
+
+.. _stg1_txt76
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de /root/mm/envs/aster/lib/python3.14/site-packages/code_aster/CodeCommands/fin.py,
+ligne 76
+FIN(INFO_RESU='NON',
+    RETASSAGE='NON')
+
+Saving objects...
+pi                       <class 'float'>
+e                        <class 'float'>
+tau                      <class 'float'>
+inf                      <class 'float'>
+nan                      <class 'float'>
+mesh                     <class 'libaster.Mesh'>
+model                    <class 'libaster.Model'>
+mat                      <class 'libaster.Material'>
+matH                     <class 'libaster.Material'>
+matHH                    <class 'libaster.Material'>
+stl                      <class 'libaster.Material'>
+slvm                     <class 'libaster.Material'>
+fmat                     <class 'libaster.MaterialField'>
+fix                      <class 'libaster.MechanicalLoadReal'>
+grp                      <class 'list'>
+load                     <class 'libaster.MechanicalLoadReal'>
+ramp                     <class 'libaster.Function'>
+steps                    <class 'libaster.ListOfFloats'>
+times                    <class 'libaster.TimesList'>
+LOADS                    <class 'str'>
+CURVE                    <class 'str'>
+common                   <class 'dict'>
+tcur                     <class 'float'>
+peak                     <class 'float'>
+stopped                  <class 'bool'>
+TARGETS                  <class 'list'>
+tn                       <class 'float'>
+res                      <class 'libaster.NonLinearResult'>
+v                        <class 'dict'>
+tot                      <class 'float'>
+line                     <class 'str'>
+
+ ╔================================================================================================╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez choisies d'ignorer sont précédées de (*).                        ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║            aucune alarme                                                                       ║
+ ╚================================================================================================╝
+
+ ---------------------------------------------------------------------------
+ Concepts de la base: G
+    Nom        Type                Taille (Mo)         Nombre      Nombre de
+                                                     d'objets       segments
+    TOTAL                              1084.09            667           1061
+  
+    00000001   MAILLAGE_SDASTER          14.63             34             70
+    00000002   MODELE_SDASTER            14.45             11             16
+    00000003   MATER_SDASTER              0.00             15             15
+    00000004   MATER_SDASTER              0.00             15             15
+    00000005   MATER_SDASTER              0.00              7              7
+    00000006   MATER_SDASTER              0.00              7              7
+    00000007   MATER_SDASTER              0.00              7              7
+    00000008   CHAM_MATER                 1.17              8             13
+    00000009   CHAR_MECA                 15.45             56             76
+    0000000a   CHAR_MECA                 11.45             56             76
+    0000000b   FONCTION_SDASTER           0.00              3              3
+    0000000c   LISTR8_SDASTER             0.00              6              6
+    0000000d   LIST_INST                  0.00              8              8
+    0000000e   EVOL_NOLI                953.43            358            449
+    &FOZERO                               0.00              2              2
+    &&_NUM_C                              0.00              1              1
+    &CATA                                37.45             42            103
+    &&NMDOME                              0.00              2              2
+    0000000f                              0.14              2             14
+    &&NMCH1P                             34.29              3              3
+    00000012                              0.14              2             14
+    00000024                              0.14              2             14
+    00000015                              0.14              2             14
+    00000018                              0.14              2             14
+    0000001b                              0.14              2             14
+    0000001e                              0.14              2             14
+    00000021                              0.14              2             14
+    00000027                              0.14              2             14
+    0000002a                              0.14              2             14
+    00000030                              0.14              2             14
+    0000002d                              0.14              2             14
+    00000033                              0.14              2             14
+ (*) sous-objets non accessible directement
+ ---------------------------------------------------------------------------
+Nom de la base                          :  GLOBALE
+     Nombre d'enregistrements utilisés       :  1556
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  1389
+     Volume des accès en lecture             :       1085.16 Mo.
+     Nombre total d'accès en écriture        :  224
+     Volume des accès en écriture            :        175.00 Mo.
+     Nombre d'identificateurs utilisés       :  1557
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  77 %
+
+Nom de la base                          :  VOLATILE
+     Nombre d'enregistrements utilisés       :  107
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  0
+     Volume des accès en lecture             :          0.00 Mo.
+     Nombre total d'accès en écriture        :  291
+     Volume des accès en écriture            :        227.34 Mo.
+     Nombre d'identificateurs utilisés       :  25
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  1 %
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                    1079.90 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                    1085.83 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :    1925.63 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                 1086  Mo.
+     TAILLE CUMULEE LIBEREE            :                  159  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :               222022
+     NOMBRE TOTAL DE LIBERATIONS       :               222022
+     APPELS AU MECANISME DE LIBERATION :                    0
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                    0  Mo.
+     VOLUME DES LECTURES               :                    0  Mo.
+     VOLUME DES ECRITURES              :                    0  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :    1079.90 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :    1085.83 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :    1925.63 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : LU-28-SEPT-2026 07:42:34
+Signature of pickled file   : 887939ec943aba72e82001ad1a8f7e1f56d2fd1e686948512ba153e7db766777
+Signature of info file      : 5009b20cda5466166d087e6e6bad2a898e0474642f13640089c0c19955180d96
+Signature of Jeveux database: d24971d48285d0b608020d45450b7bd5934ee79aba247c21e6ca6afd6f6f7590
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.21 :       0.66 :       0.87 :       0.89 *
+ * FIN                      :       0.24 :       0.13 :       0.37 :       0.40 *
+ *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . check syntax          :       0.01 :       0.00 :       0.01 :       0.00 *
+ *  . fortran               :       0.44 :       0.79 :       1.23 :       1.29 *
+ ********************************************************************************
+ * TOTAL_JOB                :       0.55 :       0.80 :       1.35 :       1.40 *
+ ********************************************************************************
+
+# Mémoire (Mo) :  1925.63 /   839.52 /  1085.83 /  1079.90 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.24s (syst:        0.13s, elaps:        0.40s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_1747=0
+
+
+saving result databases to 'BASE_PREC'...
+execution ended (command file #20): <A>_ALARM
+Running: /root/mm/envs/aster/bin/run_aster -w /home/user/aas-corner-fe/wd/v8c100_TV --status-file /root/.tmp_run_aster/run_aster_67oanzoq/__status__ --no-mpi /root/.tmp_run_aster/run_aster_67oanzoq/v8c100_TV.resume.20
+
+# ------------------------------------------------------------------------------
+Execution of code_aster
+
+# ------------------------------------------------------------------------------
+Prepare environment in /home/user/aas-corner-fe/wd/v8c100_TV
+
+# ------------------------------------------------------------------------------
+Command file #21 / 21
+
+Content of the file to execute:
+# coding=utf-8
+# original filename
+__file__ = r"/home/user/aas-corner-fe/jobs/v8c100_TV_s21.comm"
+
+
+# temporarly added for compatibility with code_aster legacy
+from math import *
+
+import code_aster
+from code_aster.Commands import *
+from code_aster import CA
+
+POURSUITE(LANG='EN', PAR_LOT='NON')
+
+LOADS='TV'
+CURVE='/home/user/aas-corner-fe/jobs/../results/v8c100_TV.curve'
+common=dict(MODELE=model, CHAM_MATER=fmat, EXCIT=(_F(CHARGE=fix), _F(CHARGE=load, FONC_MULT=ramp)),
+        COMPORTEMENT=(_F(RELATION='ENDO_FISS_EXP', GROUP_MA=('CONC','HZ')), _F(RELATION='ELAS', GROUP_MA=('STEEL','SLV','HZH'))),
+        NEWTON=_F(MATRICE='TANGENTE', REAC_ITER=1),
+        CONVERGENCE=_F(RESI_GLOB_RELA=1.E-4, ITER_GLOB_MAXI=50), ARCHIVAGE=_F(PAS_ARCH=1), SOLVEUR=_F(METHODE='MUMPS', GESTION_MEMOIRE='OUT_OF_CORE', NPREC=10))
+import os, re
+tcur=0.0; peak=0.0; stopped=False
+if os.path.exists(CURVE):
+    for line in open(CURVE):
+        m=re.match(r'CURVE\s+(\S+)\s+(\S+)', line)
+        if m:
+            tcur=max(tcur, float(m.group(1))); peak=max(peak, float(m.group(2)))
+        if line.startswith('STOP'): stopped=True
+def reac(res, t):
+    r2=CALC_CHAMP(RESULTAT=res, FORCE='REAC_NODA', INST=t)
+    vals={}
+    for g in ('HEADT','HEADV'):
+        try:
+            tb=POST_RELEVE_T(ACTION=_F(OPERATION='EXTRACTION', INTITULE='R', RESULTAT=r2, NOM_CHAM='REAC_NODA',
+                                       GROUP_NO=g, RESULTANTE='DX', INST=t)).EXTR_TABLE().values()
+            vals[g]=-tb['DX'][-1]*2
+        except Exception:
+            vals[g]=0.
+    DETRUIRE(NOM=r2)
+    return vals
+TARGETS=[0.45]
+for tn in TARGETS:
+    if stopped or tn <= tcur+1e-9: continue
+    try:
+        if tcur < 1e-12 and '0'=='1':
+            res=STAT_NON_LINE(INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+        else:
+            res=STAT_NON_LINE(reuse=res, ETAT_INIT=_F(EVOL_NOLI=res), INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+    except Exception as exc:
+        print('AASSTOP at', tcur, exc, flush=True)
+        open(CURVE,'a').write('STOP solver %g\n'%tcur); stopped=True; break
+    tcur=tn
+    v=reac(res, tcur)
+    tot=(v['HEADT'] if 'T' in LOADS else 0.)+(v['HEADV'] if 'V' in LOADS else 0.)
+    peak=max(peak, tot)
+    open(CURVE,'a').write('CURVE %g %g %g %g\n'%(tcur,tot,v['HEADT'],v['HEADV']))
+    print('AASCURVE %g %g %g %g'%(tcur,tot,v['HEADT'],v['HEADV']), flush=True)
+    if tot < 0.9*peak:
+        open(CURVE,'a').write('STOP peak %g\n'%peak); stopped=True; break
+FIN()
+
+
+
+# ------------------------------------------------------------------------------
+Command line #21:
+    ulimit -c unlimited ; ulimit -t 100000 ; ( /root/mm/envs/aster/bin/python3 "v8c100_TV_s21.comm.changed.py" --last --memory 3000.0 --numthreads 4 --tpmax 20000 ; echo $? > _exit_code_ ) 2>&1 | tee -a fort.6
+setting '--memory' value to 2700.00 MB (keyword RESERVE_MEMOIRE)
+Ouverture en écriture du fichier ./vola.1
+
+<INFO> Démarrage de l'exécution.
+
+                       -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --                       
+                               Version 18.1.6 modifiée le 14/09/2026                                
+                                    révision n/a - branche 'n/a'                                    
+                                     Copyright EDF 1991 - 2026                                      
+                                                                                                    
+                              Exécution du : Mon Sep 28 07:42:37 2026                               
+                                       Nom de la machine : vm                                       
+                                        Architecture : 64bit                                        
+                                    Type de processeur : x86_64                                     
+                Système d'exploitation : Linux-6.18.44-fc-v37-x86_64-with-glibc2.39                 
+                                  Langue des messages : C (UTF-8)                                   
+                                     Version de Python : 3.14.7                                     
+                                      Version de NumPy : 2.5.3                                      
+                                  Version de MEDCoupling : 9.16.0                                   
+                                     Parallélisme MPI : inactif                                     
+                                    Parallélisme OpenMP : actif                                     
+                              Nombre de processus OpenMP utilisés : 4                               
+                                Version de la librairie HDF5 : 2.2.0                                
+                                Version de la librairie MED : 4.2.0                                 
+                               Version de la librairie MFront : 5.1.0                               
+                               Version de la librairie MUMPS : 5.8.2                                
+                                  Librairie PETSc : non disponible                                  
+                              Version de la librairie SCOTCH : 7.0.11                               
+
+restarting from a previous execution...
+/home/user/aas-corner-fe/wd/v8c100_TV/v8c100_TV_s21.comm.changed.py:13: DeprecationWarning: This feature is obsolete, 'PAR_LOT' has been removed.
+  POURSUITE(LANG='EN', PAR_LOT='NON')
+Valeur initiale du temps CPU maximum =   20000 secondes
+  Valeur du temps CPU maximum passé aux commandes =   18000 secondes
+  Réserve CPU prévue = 2000 secondes
+
+Ouverture en lecture du fichier ./glob.1
+
+Ajustement de la taille maximale des bases à 2048.00 Go.
+    
+Nom de la base                          :  GLOBALE
+     Créée avec la version                   :  18.01.06
+     Nombre d'enregistrements utilisés       :  1556
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre d'identificateurs utilisés       :  1557
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  77 %
+
+Ouverture en lecture du fichier ./glob.1
+
+Ouverture en écriture du fichier ./vola.1
+
+Fin de lecture (durée  0.000028  s.) 
+
+                      Mémoire limite pour l'allocation dynamique : 3212.06 Mo                       
+                         ajouté à l'initialisation du processus : 997.33 Mo                         
+                               Limite cible du processus : 4209.39 Mo                               
+                         Taille limite des fichiers d'échange : 2048.00 Go                          
+pi                       <class 'float'>
+e                        <class 'float'>
+tau                      <class 'float'>
+inf                      <class 'float'>
+nan                      <class 'float'>
+mesh                     <class 'libaster.Mesh'>
+model                    <class 'libaster.Model'>
+mat                      <class 'libaster.Material'>
+matH                     <class 'libaster.Material'>
+matHH                    <class 'libaster.Material'>
+stl                      <class 'libaster.Material'>
+slvm                     <class 'libaster.Material'>
+fmat                     <class 'libaster.MaterialField'>
+fix                      <class 'libaster.MechanicalLoadReal'>
+grp                      <class 'list'>
+load                     <class 'libaster.MechanicalLoadReal'>
+ramp                     <class 'libaster.Function'>
+steps                    <class 'libaster.ListOfFloats'>
+times                    <class 'libaster.TimesList'>
+LOADS                    <class 'str'>
+CURVE                    <class 'str'>
+common                   <class 'dict'>
+tcur                     <class 'float'>
+peak                     <class 'float'>
+stopped                  <class 'bool'>
+TARGETS                  <class 'list'>
+tn                       <class 'float'>
+res                      <class 'libaster.NonLinearResult'>
+v                        <class 'dict'>
+tot                      <class 'float'>
+line                     <class 'str'>
+# Mémoire (Mo) :  1915.12 /  1915.12 /  1075.97 /  1075.94 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.21s (syst:        0.65s, elaps:        0.89s)
+# ----------------------------------------------------------------------------------------------
+/home/user/aas-corner-fe/wd/v8c100_TV/v8c100_TV_s21.comm.changed.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/aas-corner-fe/jobs/../results/v8c100_TV.curve' mode='r' encoding='UTF-8'>
+  for line in open(CURVE):
+
+.. _stg1_txt76
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de /root/mm/envs/aster/lib/python3.14/site-packages/code_aster/CodeCommands/fin.py,
+ligne 76
+FIN(INFO_RESU='NON',
+    RETASSAGE='NON')
+
+No database in results, objects not saved on processor #0
+
+ ╔================================================================================================╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez choisies d'ignorer sont précédées de (*).                        ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║            aucune alarme                                                                       ║
+ ╚================================================================================================╝
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                    1075.94 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                    1075.97 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :    1915.25 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                 1076  Mo.
+     TAILLE CUMULEE LIBEREE            :                   23  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :               221572
+     NOMBRE TOTAL DE LIBERATIONS       :               221282
+     APPELS AU MECANISME DE LIBERATION :                    0
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                    0  Mo.
+     VOLUME DES LECTURES               :                    0  Mo.
+     VOLUME DES ECRITURES              :                    0  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :    1075.94 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :    1075.97 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :    1915.25 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : LU-28-SEPT-2026 07:42:38
+INFO './glob.1' deleted
+Deleting './glob.2': No such file or directory
+INFO './vola.1' deleted
+Deleting './vola.2': No such file or directory
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.21 :       0.65 :       0.86 :       0.89 *
+ * FIN                      :       0.04 :       0.00 :       0.04 :       0.04 *
+ *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . check syntax          :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . fortran               :       0.25 :       0.65 :       0.90 :       0.93 *
+ ********************************************************************************
+ * TOTAL_JOB                :       0.35 :       0.66 :       1.01 :       1.03 *
+ ********************************************************************************
+
+# Mémoire (Mo) :  1915.25 /  1915.12 /  1075.97 /  1075.94 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.04s (syst:        0.00s, elaps:        0.04s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_1787=0
+
+
+execution ended (command file #21): <A>_ALARM
+
+# ------------------------------------------------------------------------------
+Content of /home/user/aas-corner-fe/wd/v8c100_TV after execution:
+.:
+total 15268
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1644.export
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1658.export
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1672.export
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1686.export
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1700.export
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1718.export
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1733.export
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1747.export
+-rw-r--r-- 1 root root      335 Sep 28 07:42 1787.export
+-rw-r--r-- 1 root root      334 Sep 28 07:09 554.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 682.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 697.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 711.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 725.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 754.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 780.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 794.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 808.export
+-rw-r--r-- 1 root root      334 Sep 28 07:10 822.export
+-rw-r--r-- 1 root root      335 Sep 28 07:10 836.export
+-rw-r--r-- 1 root root      335 Sep 28 07:11 850.export
+drwxr-xr-x 2 root root     4096 Sep 28 02:44 BASE_PREC
+drwxr-xr-x 2 root root     4096 Sep 28 02:17 REPE_IN
+drwxr-xr-x 2 root root     4096 Sep 28 07:09 REPE_OUT
+-rw-r--r-- 1 root root      287 Sep 28 07:42 __timer__
+-rw-r--r-- 1 root root     4015 Sep 28 07:42 fort.15
+-rw-r--r-- 1 root root 15053951 Sep 28 02:15 fort.20
+-rw-r--r-- 1 root root   362320 Sep 28 07:42 fort.6
+-rw-r--r-- 1 root root        0 Sep 28 07:09 fort.8
+-rw-r--r-- 1 root root        0 Sep 28 07:09 fort.9
+-rw-r--r-- 1 root root      251 Sep 28 07:42 pick.code_aster.infos
+-rw-r--r-- 1 root root    11365 Sep 28 07:42 pick.code_aster.objects
+-rw-r--r-- 1 root root      237 Sep 28 07:42 pick.code_aster.sha
+-rw-r--r-- 1 root root     2495 Sep 28 07:09 v8c100_TV_s01.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s02.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s03.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s04.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s05.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s06.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s07.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s08.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s09.comm.changed.py
+-rw-r--r-- 1 root root     2488 Sep 28 07:10 v8c100_TV_s10.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:10 v8c100_TV_s11.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:11 v8c100_TV_s12.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:42 v8c100_TV_s13.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:42 v8c100_TV_s14.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:42 v8c100_TV_s15.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:42 v8c100_TV_s16.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:42 v8c100_TV_s17.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:42 v8c100_TV_s18.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:42 v8c100_TV_s19.comm.changed.py
+-rw-r--r-- 1 root root     2495 Sep 28 07:42 v8c100_TV_s20.comm.changed.py
+-rw-r--r-- 1 root root     2487 Sep 28 07:42 v8c100_TV_s21.comm.changed.py
+
+REPE_OUT:
+total 0
+
+
+# ------------------------------------------------------------------------------
+Copying results
+copying (shutil) 'fort.6' to '/home/user/aas-corner-fe/jobs/v8c100_TV.mess'...
+
+# ------------------------------------------------------------------------------
+Execution summary
+                                      cpu     system    cpu+sys    elapsed
+--------------------------------------------------------------------------------
+Preparation of environment           0.01       0.00       0.01       0.00
+Execution of code_aster           4622.75     912.56    5535.31    1985.17
+Copying results                      0.00       0.00       0.00       0.00
+--------------------------------------------------------------------------------
+Total                             4622.76     912.57    5535.33    1985.18
+--------------------------------------------------------------------------------
+
+------------------------------------------------------------
+--- DIAGNOSTIC JOB : <A>_ALARM
+------------------------------------------------------------
+
