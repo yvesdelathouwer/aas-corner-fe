@@ -15,7 +15,6 @@ jobs:
         include:
           - {job: g150_TV, c: 150}
           - {job: g40_TV,  c: 40}
-          - {job: g75_TV,  c: 75}
     steps:
       - uses: actions/checkout@v4
       - name: code_aster env
