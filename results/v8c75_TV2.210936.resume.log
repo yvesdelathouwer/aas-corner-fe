@@ -3856,3 +3856,13 @@ d'ordre 11 et à l'instant  1.600000000000e-01
 Le champ <DEPL> est lu dans ETAT_INIT dans la structure de données résultat donné dans la commande.
 Le champ <SIEF_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
 commande.
+Le champ <VARI_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+---------------------------------------------------------------------
+Instant de calcul:  1.800000000000e-01 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
