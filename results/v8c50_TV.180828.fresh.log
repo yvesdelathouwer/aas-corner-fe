@@ -4305,3 +4305,52 @@ res = STAT_NON_LINE(AFFICHAGE=_F(INFO_RESIDU='NON',
                                TYPE_RESOL='AUTO'),
                     reuse=res)
 
+Liste des comportements
+
+Affecté sur 55722 éléments
+Relation                             : ENDO_FISS_EXP
+Déformation                          : PETIT
+Pas de régularisation visqueuse
+Pas de post-traitement à la fin du pas de temps
+Nombre total de variables internes   : 9
+V1 : ENDO
+V2 : INDIENDO
+V3 : ENDORIGI
+V4 : EPSEXX
+V5 : EPSEYY
+V6 : EPSEZZ
+V7 : EPSEXY
+V8 : EPSEXZ
+V9 : EPSEYZ
+Affecté sur 11610 éléments
+Relation                             : ELAS
+Déformation                          : PETIT
+Pas de régularisation visqueuse
+Pas de post-traitement à la fin du pas de temps
+Nombre total de variables internes   : 1
+V1 : VIDE
+Le système linéaire à résoudre a 320729 degrés de liberté:
+   - 306517 sont des degrés de liberté physiques
+     (ils sont portés par 95117 noeuds du maillage)
+   - 14212 sont les couples de paramètres de Lagrange associés
+     aux 7106 relations linéaires dualisées.
+La matrice est de taille 320729 équations.
+  Elle contient 16336706 termes non nuls si elle est symétrique et 32352683 termes non nuls si elle
+n'est pas symétrique.
+  Soit un taux de remplissage de   0.031 %.
+Lecture de l'état initial
+L'état initial a été récupéré dans la structure de données résultat de nom <0000000e> pour le numéro
+d'ordre 5 et à l'instant  1.000000000000e-01
+Le champ <DEPL> est lu dans ETAT_INIT dans la structure de données résultat donné dans la commande.
+Le champ <SIEF_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+Le champ <VARI_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+---------------------------------------------------------------------
+Instant de calcul:  1.200000000000e-01 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
