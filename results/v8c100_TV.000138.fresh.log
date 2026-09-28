@@ -3370,3 +3370,11 @@ Solveur MUMPS :
 débranchées.
 
 |     3        X | 1.32842E-04  X | 2.37160E-01    |TANGENTE (NOSYM)|
+Solveur MUMPS :
+  Les informations concernant la mémoire disponible ne sont pas utilisables.
+  Si vous avez choisi le mode GESTION_MEMOIRE='AUTO', par précaution on bascule en mode OUT_OF_CORE.
+  Si vous avez choisi le mode GESTION_MEMOIRE='EVAL', seules les évaluations des consommations MUMPS
+     seront pertinentes, les autres chiffres ne seront pas à prendre en compte.
+  Si vous avez choisi un autre mode, les vérifications liées aux consommations mémoires seront
+débranchées.
+
