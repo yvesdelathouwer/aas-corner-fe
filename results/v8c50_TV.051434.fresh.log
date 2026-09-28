@@ -5490,3 +5490,601 @@ Nom de la base                          :  GLOBALE
      Taille maximum du répertoire            :  2000
      Pourcentage d'utilisation du répertoire :  56 %
 
+Nom de la base                          :  VOLATILE
+     Nombre d'enregistrements utilisés       :  511
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  420
+     Volume des accès en lecture             :        328.12 Mo.
+     Nombre total d'accès en écriture        :  2295
+     Volume des accès en écriture            :       1792.97 Mo.
+     Nombre d'identificateurs utilisés       :  996
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  49 %
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     937.92 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                    2444.89 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :    5838.38 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                 2445  Mo.
+     TAILLE CUMULEE LIBEREE            :                 1895  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :              2273011
+     NOMBRE TOTAL DE LIBERATIONS       :              2273011
+     APPELS AU MECANISME DE LIBERATION :                    0
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                 1896  Mo.
+     VOLUME DES LECTURES               :                    0  Mo.
+     VOLUME DES ECRITURES              :                 1566  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     937.92 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :    2444.89 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :    5838.38 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : LU-28-SEPT-2026 06:08:47
+Signature of pickled file   : abb8b06336065b9d075e49fbe70c924544127bcfa3517a5ae18b2b0cdf2547eb
+Signature of info file      : 47c31ad3d718e362f72023415b3d78ec8c0af5f3db6bd5a449128dc23a42b6b6
+Signature of Jeveux database: ce3ccfbcfa9226e3c954b81b3f55ed904a969e347d7e1a840fe650bd31ac6727
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.13 :       0.30 :       0.43 :       0.43 *
+ * STAT_NON_LINE            :    1109.21 :     206.65 :    1315.86 :     425.41 *
+ * CALC_CHAMP               :       0.60 :       0.00 :       0.60 :       0.59 *
+ * POST_RELEVE_T            :       0.03 :       0.00 :       0.03 :       0.01 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * DETRUIRE                 :       0.31 :       0.01 :       0.32 :       0.09 *
+ * FIN                      :       0.36 :       0.16 :       0.52 :       0.42 *
+ *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . check syntax          :       0.05 :       0.00 :       0.05 :       0.02 *
+ *  . fortran               :    1110.26 :     207.11 :    1317.37 :     426.83 *
+ ********************************************************************************
+ * TOTAL_JOB                :    1110.94 :     207.14 :    1318.08 :     427.07 *
+ ********************************************************************************
+
+# Mémoire (Mo) :  5838.38 /  1454.30 /  2444.89 /   937.92 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.36s (syst:        0.16s, elaps:        0.42s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_3103=0
+
+
+saving result databases to 'BASE_PREC'...
+execution ended (command file #7): <A>_ALARM
+Running: /root/mm/envs/aster/bin/run_aster -w /home/user/aas-corner-fe/wd/v8c50_TV --status-file /root/.tmp_run_aster/run_aster_cz_rt2nc/__status__ --no-mpi /root/.tmp_run_aster/run_aster_cz_rt2nc/v8c50_TV.7
+
+# ------------------------------------------------------------------------------
+Execution of code_aster
+
+# ------------------------------------------------------------------------------
+Prepare environment in /home/user/aas-corner-fe/wd/v8c50_TV
+
+# ------------------------------------------------------------------------------
+Command file #8 / 20
+
+Content of the file to execute:
+# coding=utf-8
+# original filename
+__file__ = r"/home/user/aas-corner-fe/jobs/v8c50_TV_s07.comm"
+
+
+# temporarly added for compatibility with code_aster legacy
+from math import *
+
+import code_aster
+from code_aster.Commands import *
+from code_aster import CA
+
+POURSUITE(LANG='EN', PAR_LOT='NON')
+
+LOADS='TV'
+CURVE='/home/user/aas-corner-fe/jobs/../results/v8c50_TV.curve'
+common=dict(MODELE=model, CHAM_MATER=fmat, EXCIT=(_F(CHARGE=fix), _F(CHARGE=load, FONC_MULT=ramp)),
+        COMPORTEMENT=(_F(RELATION='ENDO_FISS_EXP', GROUP_MA=('CONC','HZ')), _F(RELATION='ELAS', GROUP_MA=('STEEL','SLV','HZH'))),
+        NEWTON=_F(MATRICE='TANGENTE', REAC_ITER=1),
+        CONVERGENCE=_F(RESI_GLOB_RELA=1.E-4, ITER_GLOB_MAXI=50), ARCHIVAGE=_F(PAS_ARCH=1), SOLVEUR=_F(METHODE='MUMPS', GESTION_MEMOIRE='OUT_OF_CORE', NPREC=10))
+import os, re
+tcur=0.0; peak=0.0; stopped=False
+if os.path.exists(CURVE):
+    for line in open(CURVE):
+        m=re.match(r'CURVE\s+(\S+)\s+(\S+)', line)
+        if m:
+            tcur=max(tcur, float(m.group(1))); peak=max(peak, float(m.group(2)))
+        if line.startswith('STOP'): stopped=True
+def reac(res, t):
+    r2=CALC_CHAMP(RESULTAT=res, FORCE='REAC_NODA', INST=t)
+    vals={}
+    for g in ('HEADT','HEADV'):
+        try:
+            tb=POST_RELEVE_T(ACTION=_F(OPERATION='EXTRACTION', INTITULE='R', RESULTAT=r2, NOM_CHAM='REAC_NODA',
+                                       GROUP_NO=g, RESULTANTE='DX', INST=t)).EXTR_TABLE().values()
+            vals[g]=-tb['DX'][-1]*2
+        except Exception:
+            vals[g]=0.
+    DETRUIRE(NOM=r2)
+    return vals
+TARGETS=[0.16]
+for tn in TARGETS:
+    if stopped or tn <= tcur+1e-9: continue
+    try:
+        if tcur < 1e-12 and '0'=='1':
+            res=STAT_NON_LINE(INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+        else:
+            res=STAT_NON_LINE(reuse=res, ETAT_INIT=_F(EVOL_NOLI=res), INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+    except Exception as exc:
+        print('AASSTOP at', tcur, exc, flush=True)
+        open(CURVE,'a').write('STOP solver %g\n'%tcur); stopped=True; break
+    tcur=tn
+    v=reac(res, tcur)
+    tot=(v['HEADT'] if 'T' in LOADS else 0.)+(v['HEADV'] if 'V' in LOADS else 0.)
+    peak=max(peak, tot)
+    open(CURVE,'a').write('CURVE %g %g %g %g\n'%(tcur,tot,v['HEADT'],v['HEADV']))
+    print('AASCURVE %g %g %g %g'%(tcur,tot,v['HEADT'],v['HEADV']), flush=True)
+    if tot < 0.9*peak:
+        open(CURVE,'a').write('STOP peak %g\n'%peak); stopped=True; break
+FIN()
+
+
+
+# ------------------------------------------------------------------------------
+Command line #8:
+    ulimit -c unlimited ; ulimit -t 100000 ; ( /root/mm/envs/aster/bin/python3 "v8c50_TV_s07.comm.changed.py" --memory 3000.0 --numthreads 4 --tpmax 20000 ; echo $? > _exit_code_ ) 2>&1 | tee -a fort.6
+setting '--memory' value to 2700.00 MB (keyword RESERVE_MEMOIRE)
+Ouverture en écriture du fichier ./vola.1
+
+<INFO> Démarrage de l'exécution.
+
+                       -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --                       
+                               Version 18.1.6 modifiée le 14/09/2026                                
+                                    révision n/a - branche 'n/a'                                    
+                                     Copyright EDF 1991 - 2026                                      
+                                                                                                    
+                              Exécution du : Mon Sep 28 06:08:50 2026                               
+                                       Nom de la machine : vm                                       
+                                        Architecture : 64bit                                        
+                                    Type de processeur : x86_64                                     
+                Système d'exploitation : Linux-6.18.44-fc-v42-x86_64-with-glibc2.39                 
+                                  Langue des messages : C (UTF-8)                                   
+                                     Version de Python : 3.14.7                                     
+                                      Version de NumPy : 2.5.3                                      
+                                  Version de MEDCoupling : 9.16.0                                   
+                                     Parallélisme MPI : inactif                                     
+                                    Parallélisme OpenMP : actif                                     
+                              Nombre de processus OpenMP utilisés : 4                               
+                                Version de la librairie HDF5 : 2.2.0                                
+                                Version de la librairie MED : 4.2.0                                 
+                               Version de la librairie MFront : 5.1.0                               
+                               Version de la librairie MUMPS : 5.8.2                                
+                                  Librairie PETSc : non disponible                                  
+                              Version de la librairie SCOTCH : 7.0.11                               
+
+restarting from a previous execution...
+/home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s07.comm.changed.py:13: DeprecationWarning: This feature is obsolete, 'PAR_LOT' has been removed.
+  POURSUITE(LANG='EN', PAR_LOT='NON')
+Valeur initiale du temps CPU maximum =   20000 secondes
+  Valeur du temps CPU maximum passé aux commandes =   18000 secondes
+  Réserve CPU prévue = 2000 secondes
+
+Ouverture en lecture du fichier ./glob.1
+
+Ajustement de la taille maximale des bases à 2048.00 Go.
+    
+Nom de la base                          :  GLOBALE
+     Créée avec la version                   :  18.01.06
+     Nombre d'enregistrements utilisés       :  778
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre d'identificateurs utilisés       :  1126
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  56 %
+
+Ouverture en lecture du fichier ./glob.1
+
+Ouverture en écriture du fichier ./vola.1
+
+Fin de lecture (durée  0.000031  s.) 
+
+                      Mémoire limite pour l'allocation dynamique : 3212.06 Mo                       
+                         ajouté à l'initialisation du processus : 997.34 Mo                         
+                               Limite cible du processus : 4209.39 Mo                               
+                         Taille limite des fichiers d'échange : 2048.00 Go                          
+pi                       <class 'float'>
+e                        <class 'float'>
+tau                      <class 'float'>
+inf                      <class 'float'>
+nan                      <class 'float'>
+mesh                     <class 'libaster.Mesh'>
+model                    <class 'libaster.Model'>
+mat                      <class 'libaster.Material'>
+matH                     <class 'libaster.Material'>
+matHH                    <class 'libaster.Material'>
+stl                      <class 'libaster.Material'>
+slvm                     <class 'libaster.Material'>
+fmat                     <class 'libaster.MaterialField'>
+fix                      <class 'libaster.MechanicalLoadReal'>
+grp                      <class 'list'>
+load                     <class 'libaster.MechanicalLoadReal'>
+ramp                     <class 'libaster.Function'>
+steps                    <class 'libaster.ListOfFloats'>
+times                    <class 'libaster.TimesList'>
+LOADS                    <class 'str'>
+CURVE                    <class 'str'>
+common                   <class 'dict'>
+tcur                     <class 'float'>
+peak                     <class 'float'>
+stopped                  <class 'bool'>
+TARGETS                  <class 'list'>
+tn                       <class 'float'>
+res                      <class 'libaster.NonLinearResult'>
+v                        <class 'dict'>
+tot                      <class 'float'>
+line                     <class 'str'>
+# Mémoire (Mo) :  1356.20 /  1356.19 /   519.20 /   519.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.15s (syst:        0.38s, elaps:        0.53s)
+# ----------------------------------------------------------------------------------------------
+/home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s07.comm.changed.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/aas-corner-fe/jobs/../results/v8c50_TV.curve' mode='r' encoding='UTF-8'>
+  for line in open(CURVE):
+
+.. _stg1_txt48
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s07.comm.changed.py, ligne 48
+res = STAT_NON_LINE(AFFICHAGE=_F(INFO_RESIDU='NON',
+                                 INFO_TEMPS='NON'),
+                    ARCHIVAGE=_F(CHAM_EXCLU=('RESI_NOEU', 'RESI_RELA_NOEU'),
+                                 PAS_ARCH=1),
+                    CHAM_MATER=fmat,
+                    COMPORTEMENT=(_F(DEFORMATION='PETIT',
+                                     GROUP_MA=('CONC', 'HZ'),
+                                     ITER_CPLAN_MAXI=10,
+                                     ITER_INTE_MAXI=20,
+                                     ITER_INTE_PAS=0,
+                                     PARM_THETA=1.0,
+                                     REGU_VISC='NON',
+                                     RELATION='ENDO_FISS_EXP',
+                                     RESI_CPLAN_RELA=1e-06,
+                                     RESI_INTE=1e-06),
+                                  _F(DEFORMATION='PETIT',
+                                     GROUP_MA=('STEEL', 'SLV', 'HZH'),
+                                     ITER_CPLAN_MAXI=10,
+                                     ITER_INTE_MAXI=20,
+                                     ITER_INTE_PAS=0,
+                                     PARM_THETA=1.0,
+                                     REGU_VISC='NON',
+                                     RELATION='ELAS',
+                                     RESI_CPLAN_RELA=1e-06,
+                                     RESI_INTE=1e-06)),
+                    CONVERGENCE=_F(ARRET='OUI',
+                                   ITER_GLOB_ELAS=25,
+                                   ITER_GLOB_MAXI=50,
+                                   RESI_GLOB_RELA=0.0001,
+                                   VERIF='TOUT'),
+                    ETAT_INIT=_F(EVOL_NOLI=res),
+                    EXCIT=(_F(CHARGE='<00000009>',
+                              TYPE_CHARGE='FIXE_CSTE'),
+                           _F(CHARGE='<0000000a>',
+                              FONC_MULT=ramp,
+                              TYPE_CHARGE='FIXE_CSTE')),
+                    INCREMENT=_F(CRITERE='RELATIF',
+                                 INST_FIN=0.16,
+                                 INST_INIT=0.14,
+                                 LIST_INST=times,
+                                 PRECISION=1e-06),
+                    MESURE=_F(TABLE='NON'),
+                    METHODE='NEWTON',
+                    MODELE=model,
+                    NEWTON=_F(MATRICE='TANGENTE',
+                              MATR_RIGI_SYME='NON',
+                              REAC_INCR=1,
+                              REAC_ITER=1,
+                              REAC_ITER_ELAS=0),
+                    SOLVEUR=_F(ACCELERATION='AUTO',
+                               ELIM_LAGR='LAGR2',
+                               FILTRAGE_MATRICE=-1.0,
+                               GESTION_MEMOIRE='OUT_OF_CORE',
+                               LOW_RANK_SEUIL=0.0,
+                               MATR_DISTRIBUEE='NON',
+                               METHODE='MUMPS',
+                               MIXER_PRECISION='NON',
+                               NB_RHS=1,
+                               NPREC=10,
+                               PCENT_PIVOT=35,
+                               POSTTRAITEMENTS='AUTO',
+                               PRETRAITEMENTS='AUTO',
+                               REDUCTION_MPI=0,
+                               RENUM='AUTO',
+                               RESI_RELA=-1.0,
+                               STOP_SINGULIER='OUI',
+                               TYPE_RESOL='AUTO'),
+                    reuse=res)
+
+Liste des comportements
+
+Affecté sur 55722 éléments
+Relation                             : ENDO_FISS_EXP
+Déformation                          : PETIT
+Pas de régularisation visqueuse
+Pas de post-traitement à la fin du pas de temps
+Nombre total de variables internes   : 9
+V1 : ENDO
+V2 : INDIENDO
+V3 : ENDORIGI
+V4 : EPSEXX
+V5 : EPSEYY
+V6 : EPSEZZ
+V7 : EPSEXY
+V8 : EPSEXZ
+V9 : EPSEYZ
+Affecté sur 11610 éléments
+Relation                             : ELAS
+Déformation                          : PETIT
+Pas de régularisation visqueuse
+Pas de post-traitement à la fin du pas de temps
+Nombre total de variables internes   : 1
+V1 : VIDE
+Le système linéaire à résoudre a 320729 degrés de liberté:
+   - 306517 sont des degrés de liberté physiques
+     (ils sont portés par 95117 noeuds du maillage)
+   - 14212 sont les couples de paramètres de Lagrange associés
+     aux 7106 relations linéaires dualisées.
+La matrice est de taille 320729 équations.
+  Elle contient 16336706 termes non nuls si elle est symétrique et 32352683 termes non nuls si elle
+n'est pas symétrique.
+  Soit un taux de remplissage de   0.031 %.
+Lecture de l'état initial
+L'état initial a été récupéré dans la structure de données résultat de nom <0000000e> pour le numéro
+d'ordre 7 et à l'instant  1.400000000000e-01
+Le champ <DEPL> est lu dans ETAT_INIT dans la structure de données résultat donné dans la commande.
+Le champ <SIEF_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+Le champ <VARI_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+---------------------------------------------------------------------
+Instant de calcul:  1.600000000000e-01 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   2593 Mo  alors qu'il n'y a que 797 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 421 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     0        X | 9.66122E-02  X | 5.52572E+01    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   2667 Mo  alors qu'il n'y a que 539 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 420 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+Degré de liberté physique associé au noeud 12559 et à la composante DX.
+
+Problème : la matrice est singulière ou presque singulière :
+  Lors de la factorisation de la matrice, on a rencontré un problème
+  (pivot nul ou presque nul) à la ligne 48796 qui correspond au degré de liberté donné ci-dessus.
+
+Risques et conseils :
+   * Si la ligne correspond a un degré de liberté physique, il s'agit probablement d'un mouvement
+     de corps rigide mal bloqué.
+     Vérifiez les conditions aux limites.
+     Si vous faites du contact, il ne faut pas que la structure ne "tienne" que par le contact.
+     Vérifiez également les caractéristiques matériaux (module d'Young, ...).
+
+   * Si la ligne correspond a un degré de liberté de Lagrange, il s'agit sans doute d'une condition
+     limite redondante.
+     En particulier, il se peut que la relation linéaire surabondante provienne des conditions de
+contact.
+     Peut-être devriez vous exclure certains noeuds des conditions de contact
+     (mots clés SANS_NOEUD et SANS_GROUP_NO).
+
+   * Si le solveur utilisé est LDLT ou MULT_FRONT, vous pouvez utiliser le solveur MUMPS
+     car celui-ci est le seul à pouvoir factoriser les matrices qui ne sont pas définies positives.
+
+   * Parfois, en parallèle, le critère de détection de singularité de MUMPS est trop pessimiste ! Il
+reste néanmoins souvent
+     possible de faire passer le calcul complet en relaxant ce critère (augmenter de 1 ou 2 la
+valeur du mot-clé NPREC) ou
+     en le débranchant (valeur du mot-clé NPREC=-1) ou en relançant le calcul sur moins de
+processeurs.
+
+   * Il se peut aussi que ce phénomène soit tout à fait normal avec X-FEM si la fissure passe
+     très près d'un noeud.
+     Si le nombre de décimales perdues n'est pas trop grand (max 10 décimales),
+     vous pouvez relancer le calcul en augmentant le nombre de décimales perdues autorisé :
+     mot-clé NPREC du mot clé facteur SOLVEUR.
+     Sinon, contactez l'équipe de développement.
+
+
+|     0        E |              X |                |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+<Erreur> La matrice du système est singulière
+
+<Action> On essaie de découper le pas de temps.
+
+On utilise la découpe manuelle.
+Découpe uniforme à partir de l'instant  1.400000000000e-01 en 2 pas de temps.
+(soit un incrément constant de  1.000000000000e-02)
+<Action> On découpe le pas de temps.
+Temps CPU consommé dans ce pas de temps    : 2 min 13 s
+
+* Nombre d'itérations de Newton                     : 1
+* Temps total intégration comportement              : 5.968 s (2 intégrations)
+* Temps total factorisation matrice                 : 1 min 51 s (2 factorisations)
+* Temps construction second membre                  : 0.307 s
+* Temps total résolution K.U=F                      : 2.278 s (1 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 12.627 s
+Mémoire (Mo) :  5944.20 /  3306.07 /  2488.57 /   981.59 (VmPeak / VmSize / Optimum / Minimum)
+
+---------------------------------------------------------------------
+Instant de calcul:  1.500000000000e-01 - Niveau de découpe: 2
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   2593 Mo  alors qu'il n'y a que 538 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 421 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     0        X | 4.55394E-02  X | 2.76315E+01    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   2592 Mo  alors qu'il n'y a que 540 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 420 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     1        X | 6.76298E-03  X | 4.12638E+00    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   2593 Mo  alors qu'il n'y a que 539 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 420 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+
+ ╔================================================================================================╗
+ ║ <A> <CATAMESS_41>                                                                              ║
+ ║                                                                                                ║
+ ║ Le message d'alarme 'FACTOR_75' a été émis 5 fois, il ne sera plus affiché.                    ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     2        X | 2.65252E-02  X | 1.62531E+01    |TANGENTE (NOSYM)|
+|     3        X | 4.36511E-03  X | 2.66891E+00    |TANGENTE (NOSYM)|
+|     4        X | 2.82354E-04  X | 1.72591E-01    |TANGENTE (NOSYM)|
