@@ -2756,3 +2756,40 @@ Instant de calcul:  1.300000000000e-01 - Niveau de découpe: 2
 
 |     2        X | 4.53800E-03  X | 6.37618E+00    |TANGENTE (NOSYM)|
 |     3        X | 4.65897E-03  X | 6.54677E+00    |TANGENTE (NOSYM)|
+|     4        X | 9.49750E-04  X | 1.33449E+00    |TANGENTE (NOSYM)|
+|     5          | 2.25301E-05    | 3.16569E-02    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  2.253014568394e-05 au noeud et degré de liberté <62465  
+DX>
+Temps CPU consommé dans ce pas de temps    : 11 min 20 s
+
+* Nombre d'itérations de Newton                     : 6
+* Temps total intégration comportement              : 32.840 s (7 intégrations)
+* Temps total factorisation matrice                 : 8 min 45 s (6 factorisations)
+* Temps construction second membre                  : 0.653 s
+* Temps total résolution K.U=F                      : 1 min 12 s (6 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 49.829 s
+Mémoire (Mo) :  7129.39 /  3663.78 /  2911.79 /  1131.91 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  1.300000000000e-01 pour le numéro d'ordre 8
+Champ stocké <SIEF_ELGA> à l'instant  1.300000000000e-01 pour le numéro d'ordre 8
+Champ stocké <VARI_ELGA> à l'instant  1.300000000000e-01 pour le numéro d'ordre 8
+Champ stocké <COMPORTEMENT> à l'instant  1.300000000000e-01 pour le numéro d'ordre 8
+[ 49%] Instant calculé : 1.30000e-01, seul l'instant initial a été archivé
+---------------------------------------------------------------------
+Instant de calcul:  1.400000000000e-01 - Niveau de découpe: 2
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+|     0        X | 5.65099E-02  X | 7.73725E+01    |TANGENTE (NOSYM)|
+|     1        X | 1.20767E-02  X | 1.65008E+01    |TANGENTE (NOSYM)|
+|     2        X | 9.43370E-03  X | 1.28615E+01    |TANGENTE (NOSYM)|
+|     3        X | 4.19391E-03  X | 5.71297E+00    |TANGENTE (NOSYM)|
