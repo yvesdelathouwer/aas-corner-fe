@@ -4588,3 +4588,61 @@ La matrice est de taille 456148 équations.
   Elle contient 23709453 termes non nuls si elle est symétrique et 46962758 termes non nuls si elle
 n'est pas symétrique.
   Soit un taux de remplissage de   0.023 %.
+Lecture de l'état initial
+L'état initial a été récupéré dans la structure de données résultat de nom <0000000e> pour le numéro
+d'ordre 6 et à l'instant  1.227272727273e-01
+Le champ <DEPL> est lu dans ETAT_INIT dans la structure de données résultat donné dans la commande.
+Le champ <SIEF_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+Le champ <VARI_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+---------------------------------------------------------------------
+Instant de calcul:  1.431818181818e-01 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
+Solveur MUMPS :
+  Les informations concernant la mémoire disponible ne sont pas utilisables.
+  Si vous avez choisi le mode GESTION_MEMOIRE='AUTO', par précaution on bascule en mode OUT_OF_CORE.
+  Si vous avez choisi le mode GESTION_MEMOIRE='EVAL', seules les évaluations des consommations MUMPS
+     seront pertinentes, les autres chiffres ne seront pas à prendre en compte.
+  Si vous avez choisi un autre mode, les vérifications liées aux consommations mémoires seront
+débranchées.
+
+|     0        X | 1.88102E-02  X | 3.63247E+01    |TANGENTE (NOSYM)|
+La mémoire consommée actuellement hors JEVEUX est de 1591.30 Mo.
+La mémoire limite pour l'allocation dynamique est fixée à 2618.10 Mo (-750.29 Mo).
+Cette valeur limite a été réactualisée lors de la mise en oeuvre d'un processus de libération.
+
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   3910 Mo  alors qu'il n'y a que 1358 Mo de disponible sur ce processeur !                     ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 576 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
