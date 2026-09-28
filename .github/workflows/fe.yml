@@ -1,0 +1,46 @@
+name: AAS corner FE
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['ci/trigger']
+jobs:
+  fe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    permissions: {contents: write}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {job: g150_TV, c: 150}
+          - {job: g40_TV,  c: 40}
+          - {job: g75_TV,  c: 75}
+    steps:
+      - uses: actions/checkout@v4
+      - name: code_aster env
+        run: |
+          curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
+          ./bin/micromamba create -y -q -p $HOME/mm/envs/aster -c conda-forge code-aster=18.1.6 gmsh python-gmsh
+          nproc; free -m
+      - name: mesh
+        run: |
+          export PATH=$HOME/mm/envs/aster/bin:$PATH
+          cd mesh && python3 ../mkmesh.py ${{ matrix.c }} m8_h100_d16_ct${{ matrix.c }}_e${{ matrix.c }}.med
+      - name: run (one checkpointed step per call, results pushed to branch fe/${{ matrix.job }})
+        run: |
+          git config user.name aas-fe; git config user.email aas-fe@adit.org.il
+          git checkout -B fe/${{ matrix.job }}
+          git push -f -q origin HEAD:fe/${{ matrix.job }}
+          sed -i "s#/home/claude/aas-corner-fe#$PWD#g" jobs/${{ matrix.job }}*
+          sed -i 's/ncpus 2/ncpus 4/; s/memory_limit 6000/memory_limit 12000/' jobs/${{ matrix.job }}.export
+          BRANCH=fe/${{ matrix.job }} JOBS=${{ matrix.job }} timeout 20400 ./stepper.sh || true
+      - name: keep checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ckpt-${{ matrix.job }}
+          path: |
+            wd/${{ matrix.job }}/base.ok
+            wd/${{ matrix.job }}/next
+          retention-days: 7
