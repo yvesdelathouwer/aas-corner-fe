@@ -2911,3 +2911,398 @@ Instant de calcul:  8.000000000000e-02 - Niveau de découpe: 1
  ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
  ╚================================================================================================╝
 
+|     1        X | 3.30142E-02  X | 2.88184E+01    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   2588 Mo  alors qu'il n'y a que 710 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 415 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     2        X | 1.53464E-02  X | 1.33442E+01    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   2589 Mo  alors qu'il n'y a que 710 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 415 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     3        X | 1.31458E-02  X | 1.14440E+01    |TANGENTE (NOSYM)|
+
+ ╔================================================================================================╗
+ ║ <A> <FACTOR_75>                                                                                ║
+ ║                                                                                                ║
+ ║ Attention, vous avez demandé un calcul OUT_OF_CORE, mais MUMPS estime avoir besoin pour cela   ║
+ ║ d'au moins                                                                                     ║
+ ║   2589 Mo  alors qu'il n'y a que 710 Mo de disponible sur ce processeur !                      ║
+ ║   Le calcul pourrait donc être ralenti ou s'arrêter pour cette raison.                         ║
+ ║                                                                                                ║
+ ║   Pour information: mémoire déjà pré-allouée par MUMPS (exécutable, matrice...)= 415 Mo,       ║
+ ║                     nombre de systèmes linéaires à factoriser en même temps    = 1.            ║
+ ║                                                                                                ║
+ ║ Conseils :                                                                                     ║
+ ║   La prochaine fois, relancez avec plus de mémoire globale ou avec une option de calcul plus   ║
+ ║ économe                                                                                        ║
+ ║   (par ordre décroissant d'efficacité):                                                        ║
+ ║    - Si le calcul est parallèle, réduisez la consommation MUMPS en augmentant le nombre de     ║
+ ║ processeurs,                                                                                   ║
+ ║    - Si le calcul est parallèle, réduisez la consommation Aster en activant l'option           ║
+ ║ SOLVEUR/MATR_DISTRIBUEE,                                                                       ║
+ ║   Ou, plus radicalement:                                                                       ║
+ ║    - Utilisez un solveur moins exigeant en mémoire (par exemple: SOLVEUR/METHODE='PETSC' +     ║
+ ║ PRECOND='LDLT_SP').                                                                            ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+
+ ╔================================================================================================╗
+ ║ <A> <CATAMESS_41>                                                                              ║
+ ║                                                                                                ║
+ ║ Le message d'alarme 'FACTOR_75' a été émis 5 fois, il ne sera plus affiché.                    ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
+ ╚================================================================================================╝
+
+|     4        X | 2.75352E-03  X | 2.39237E+00    |TANGENTE (NOSYM)|
+|     5        X | 1.04132E-03  X | 9.04450E-01    |TANGENTE (NOSYM)|
+|     6          | 1.33518E-05    | 1.15957E-02    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  1.335182911376e-05 au noeud et degré de liberté <18048  
+DX>
+Temps CPU consommé dans ce pas de temps    : 11 min  8 s
+
+* Nombre d'itérations de Newton                     : 7
+* Temps total intégration comportement              : 37.688 s (8 intégrations)
+* Temps total factorisation matrice                 : 9 min 11 s (7 factorisations)
+* Temps construction second membre                  : 0.623 s
+* Temps total résolution K.U=F                      : 23.625 s (7 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 55.450 s
+Mémoire (Mo) :  5697.18 /  3133.58 /  2313.87 /   806.89 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  8.000000000000e-02 pour le numéro d'ordre 4
+Champ stocké <SIEF_ELGA> à l'instant  8.000000000000e-02 pour le numéro d'ordre 4
+Champ stocké <VARI_ELGA> à l'instant  8.000000000000e-02 pour le numéro d'ordre 4
+Champ stocké <COMPORTEMENT> à l'instant  8.000000000000e-02 pour le numéro d'ordre 4
+[100%] Instant calculé : 8.00000e-02, seul l'instant initial a été archivé
+Temps CPU consommé dans le calcul          : 11 min  8 s
+
+dont temps CPU "perdu" dans les découpes            : 0.000 s
+* Nombre de pas de temps                            : 1
+* Nombre d'itérations de Newton                     : 7
+* Temps dans l'archivage                            : 0.042 s
+* Temps dans le post-traitement                     : 0.000 s
+* Temps total intégration comportement              : 37.688 s (8 intégrations)
+* Temps total factorisation matrice                 : 9 min 11 s (7 factorisations)
+* Temps construction second membre                  : 0.623 s
+* Temps total résolution K.U=F                      : 23.625 s (7 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):   1985.61    324.30    577.42
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):     88.30      6.43     89.23
+# Résultat commande #0002 (STAT_NON_LINE): res ('<0000000e>') de type <NonLinearResult>
+# Mémoire (Mo) :  5697.18 /  1927.79 /  2313.87 /   806.89 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:     1759.90s (syst:      335.16s, elaps:      679.55s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt184
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de
+/root/mm/envs/aster/lib/python3.14/site-packages/code_aster/Supervis/ExecuteCommand.py, ligne 184
+CALC_CHAMP(CRITERE='RELATIF',
+           FORCE='REAC_NODA',
+           INFO=1,
+           INST=0.08,
+           PARALLELISME_TEMPS='NON',
+           PRECISION=1e-06,
+           RESULTAT=res)
+
+Le système linéaire à résoudre a 320729 degrés de liberté:
+   - 306517 sont des degrés de liberté physiques
+     (ils sont portés par 95117 noeuds du maillage)
+   - 14212 sont les couples de paramètres de Lagrange associés
+     aux 7106 relations linéaires dualisées.
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.53      0.00      0.54
+# Résultat commande #0003 (CALC_CHAMP): '<00000018>' de type <NonLinearResult>
+# Dépend de :
+# - model ('<00000002>') de type <Model>
+# - fmat ('<00000008>') de type <MaterialField>
+# Mémoire (Mo) :  5697.18 /  1927.79 /  2313.87 /   806.89 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.86s (syst:        0.00s, elaps:        0.83s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt34
+# ----------------------------------------------------------------------------------------------
+# Commande #0004 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s03.comm.changed.py, ligne 34
+tb = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                             FORMAT_C='MODULE',
+                             GROUP_NO='HEADT',
+                             INST=0.08,
+                             INTITULE='R',
+                             MOYE_NOEUD='OUI',
+                             NOM_CHAM='REAC_NODA',
+                             OPERATION='EXTRACTION',
+                             PRECISION=1e-06,
+                             REPERE='GLOBAL',
+                             RESULTANTE='DX',
+                             RESULTAT=r2),
+                   INFO=1)
+
+# Résultat commande #0004 (POST_RELEVE_T): tb ('<00000019>') de type <Table>
+# Mémoire (Mo) :  5697.18 /  1927.79 /  2313.87 /   806.89 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.04s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt34
+# ----------------------------------------------------------------------------------------------
+# Commande #0005 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s03.comm.changed.py, ligne 34
+tb = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                             FORMAT_C='MODULE',
+                             GROUP_NO='HEADV',
+                             INST=0.08,
+                             INTITULE='R',
+                             MOYE_NOEUD='OUI',
+                             NOM_CHAM='REAC_NODA',
+                             OPERATION='EXTRACTION',
+                             PRECISION=1e-06,
+                             REPERE='GLOBAL',
+                             RESULTANTE='DX',
+                             RESULTAT=r2),
+                   INFO=1)
+
+# Résultat commande #0005 (POST_RELEVE_T): tb ('<0000001a>') de type <Table>
+# Mémoire (Mo) :  5697.18 /  1927.79 /  2313.87 /   806.89 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.04s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt39
+# ----------------------------------------------------------------------------------------------
+# Commande #0006 de /home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s03.comm.changed.py, ligne 39
+DETRUIRE(INFO=1,
+         NOM=r2)
+
+# Mémoire (Mo) :  5697.18 /  1927.79 /  2313.87 /   806.89 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.53s (syst:        0.02s, elaps:        0.14s)
+# ----------------------------------------------------------------------------------------------
+/home/user/aas-corner-fe/wd/v8c50_TV/v8c50_TV_s03.comm.changed.py:56: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/aas-corner-fe/jobs/../results/v8c50_TV.curve' mode='a' encoding='UTF-8'>
+  open(CURVE,'a').write('CURVE %g %g %g %g\n'%(tcur,tot,v['HEADT'],v['HEADV']))
+AASCURVE 0.08 33771.5 26359 7412.5
+
+.. _stg1_txt76
+# ----------------------------------------------------------------------------------------------
+# Commande #0007 de /root/mm/envs/aster/lib/python3.14/site-packages/code_aster/CodeCommands/fin.py,
+ligne 76
+FIN(INFO_RESU='NON',
+    RETASSAGE='NON')
+
+Saving objects...
+pi                       <class 'float'>
+e                        <class 'float'>
+tau                      <class 'float'>
+inf                      <class 'float'>
+nan                      <class 'float'>
+mesh                     <class 'libaster.Mesh'>
+model                    <class 'libaster.Model'>
+mat                      <class 'libaster.Material'>
+matH                     <class 'libaster.Material'>
+matHH                    <class 'libaster.Material'>
+stl                      <class 'libaster.Material'>
+slvm                     <class 'libaster.Material'>
+fmat                     <class 'libaster.MaterialField'>
+fix                      <class 'libaster.MechanicalLoadReal'>
+grp                      <class 'list'>
+load                     <class 'libaster.MechanicalLoadReal'>
+ramp                     <class 'libaster.Function'>
+steps                    <class 'libaster.ListOfFloats'>
+times                    <class 'libaster.TimesList'>
+LOADS                    <class 'str'>
+CURVE                    <class 'str'>
+common                   <class 'dict'>
+tcur                     <class 'float'>
+peak                     <class 'float'>
+stopped                  <class 'bool'>
+TARGETS                  <class 'list'>
+tn                       <class 'float'>
+res                      <class 'libaster.NonLinearResult'>
+v                        <class 'dict'>
+tot                      <class 'float'>
+line                     <class 'str'>
+
+ ╔================================================================================================╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez choisies d'ignorer sont précédées de (*).                        ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║            FACTOR_75            émise    7 fois                                                ║
+ ╚================================================================================================╝
+
+ ---------------------------------------------------------------------------
+ Concepts de la base: G
+    Nom        Type                Taille (Mo)         Nombre      Nombre de
+                                                     d'objets       segments
+    TOTAL                               345.47            460            701
+  
+    00000001   MAILLAGE_SDASTER          10.23             34             70
+    00000002   MODELE_SDASTER            10.12             11             16
+    00000003   MATER_SDASTER              0.00             15             15
+    00000004   MATER_SDASTER              0.00             15             15
+    00000005   MATER_SDASTER              0.00              7              7
+    00000006   MATER_SDASTER              0.00              7              7
+    00000007   MATER_SDASTER              0.00              7              7
+    00000008   CHAM_MATER                 0.71              8             13
+    00000009   CHAR_MECA                 11.23             56             76
+    0000000a   CHAR_MECA                  8.05             56             76
+    0000000b   FONCTION_SDASTER           0.00              3              3
+    0000000c   LISTR8_SDASTER             0.00              6              6
+    0000000d   LIST_INST                  0.00              8              8
+    0000000e   EVOL_NOLI                243.81            169            215
+    &FOZERO                               0.00              2              2
+    &&_NUM_C                              0.00              1              1
+    &CATA                                37.45             42            103
+    &&NMDOME                              0.00              2              2
+    0000000f                              0.11              2             14
+    &&NMCH1P                             23.42              3              3
+    00000012                              0.11              2             14
+    00000015                              0.11              2             14
+    00000018                              0.11              2             14
+ (*) sous-objets non accessible directement
+ ---------------------------------------------------------------------------
+Nom de la base                          :  GLOBALE
+     Nombre d'enregistrements utilisés       :  597
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  607
+     Volume des accès en lecture             :        474.22 Mo.
+     Nombre total d'accès en écriture        :  319
+     Volume des accès en écriture            :        249.22 Mo.
+     Nombre d'identificateurs utilisés       :  893
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  44 %
+
+Nom de la base                          :  VOLATILE
+     Nombre d'enregistrements utilisés       :  511
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  504
+     Volume des accès en lecture             :        393.75 Mo.
+     Nombre total d'accès en écriture        :  2615
+     Volume des accès en écriture            :       2042.97 Mo.
+     Nombre d'identificateurs utilisés       :  1000
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  50 %
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     806.89 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                    2313.87 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :    5697.18 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                 2314  Mo.
+     TAILLE CUMULEE LIBEREE            :                 2086  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :              2281107
+     NOMBRE TOTAL DE LIBERATIONS       :              2281107
+     APPELS AU MECANISME DE LIBERATION :                    0
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                 2212  Mo.
+     VOLUME DES LECTURES               :                    0  Mo.
+     VOLUME DES ECRITURES              :                 1816  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     806.89 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :    2313.87 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :    5697.18 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : LU-28-SEPT-2026 00:42:42
+Signature of pickled file   : 037d80dc265b6f29b894242c54ea854479d2278d35550937081cf99a06a6100e
+Signature of info file      : 3c20f1f5640021f40864a555f5a76b13ab8fe63e18d21d969fdb5f4a54e911d8
+Signature of Jeveux database: 68fe0d9752ee714d912288a6b222f89375cd286b6307c1b481d5f73d16f89a2c
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.20 :       0.32 :       0.52 :       0.52 *
+ * STAT_NON_LINE            :    1759.90 :     335.16 :    2095.06 :     679.55 *
+ * CALC_CHAMP               :       0.86 :       0.00 :       0.86 :       0.83 *
+ * POST_RELEVE_T            :       0.04 :       0.00 :       0.04 :       0.00 *
+ * POST_RELEVE_T            :       0.04 :       0.00 :       0.04 :       0.01 *
+ * DETRUIRE                 :       0.53 :       0.02 :       0.55 :       0.14 *
+ * FIN                      :       0.30 :       0.23 :       0.53 :       0.62 *
+ *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . check syntax          :       0.06 :       0.00 :       0.06 :       0.03 *
+ *  . fortran               :    1761.22 :     335.71 :    2096.93 :     681.49 *
+ ********************************************************************************
+ * TOTAL_JOB                :    1762.16 :     335.75 :    2097.91 :     681.94 *
+ ********************************************************************************
+
+# Mémoire (Mo) :  5697.18 /  1454.31 /  2313.87 /   806.89 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.30s (syst:        0.23s, elaps:        0.62s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_2549=0
+
+
+saving result databases to 'BASE_PREC'...
