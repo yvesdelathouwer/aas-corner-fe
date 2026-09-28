@@ -3371,3 +3371,21 @@ Solveur MUMPS :
   Si vous avez choisi un autre mode, les vérifications liées aux consommations mémoires seront
 débranchées.
 
+|     0        X | 3.69566E-02  X | 7.38476E+01    |TANGENTE (NOSYM)|
+Solveur MUMPS :
+  Les informations concernant la mémoire disponible ne sont pas utilisables.
+  Si vous avez choisi le mode GESTION_MEMOIRE='AUTO', par précaution on bascule en mode OUT_OF_CORE.
+  Si vous avez choisi le mode GESTION_MEMOIRE='EVAL', seules les évaluations des consommations MUMPS
+     seront pertinentes, les autres chiffres ne seront pas à prendre en compte.
+  Si vous avez choisi un autre mode, les vérifications liées aux consommations mémoires seront
+débranchées.
+
+|     1        X | 3.30398E-03  X | 6.53721E+00    |TANGENTE (NOSYM)|
+Solveur MUMPS :
+  Les informations concernant la mémoire disponible ne sont pas utilisables.
+  Si vous avez choisi le mode GESTION_MEMOIRE='AUTO', par précaution on bascule en mode OUT_OF_CORE.
+  Si vous avez choisi le mode GESTION_MEMOIRE='EVAL', seules les évaluations des consommations MUMPS
+     seront pertinentes, les autres chiffres ne seront pas à prendre en compte.
+  Si vous avez choisi un autre mode, les vérifications liées aux consommations mémoires seront
+débranchées.
+
