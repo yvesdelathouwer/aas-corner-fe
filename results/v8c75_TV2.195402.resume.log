@@ -2414,3 +2414,7 @@ Instant de calcul:  1.400000000000e-01 - Niveau de découpe: 2
 |    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
 |                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
 ---------------------------------------------------------------------
+|     0        X | 5.65099E-02  X | 7.73725E+01    |TANGENTE (NOSYM)|
+|     1        X | 1.20767E-02  X | 1.65008E+01    |TANGENTE (NOSYM)|
+|     2        X | 9.43370E-03  X | 1.28615E+01    |TANGENTE (NOSYM)|
+|     3        X | 4.19391E-03  X | 5.71297E+00    |TANGENTE (NOSYM)|
