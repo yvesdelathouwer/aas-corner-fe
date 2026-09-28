@@ -6612,3 +6612,36 @@ Instant de calcul:  1.506250000000e-01 - Niveau de découpe: 7
 |     1        X | 2.11602E-04  X | 1.28216E-01    |TANGENTE (NOSYM)|
 |     2        X | 1.40339E-04  X | 8.50351E-02    |TANGENTE (NOSYM)|
 |     3        X | 2.49960E-04  X | 1.51459E-01    |TANGENTE (NOSYM)|
+|     4          | 6.72005E-05    | 4.07192E-02    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  6.720053383604e-05 au noeud et degré de liberté <70568  
+DX>
+Temps CPU consommé dans ce pas de temps    : 4 min 45 s
+
+* Nombre d'itérations de Newton                     : 5
+* Temps total intégration comportement              : 18.139 s (6 intégrations)
+* Temps total factorisation matrice                 : 3 min 43 s (5 factorisations)
+* Temps construction second membre                  : 0.355 s
+* Temps total résolution K.U=F                      : 12.900 s (5 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 30.872 s
+Mémoire (Mo) :  6132.05 /  3439.47 /  2622.15 /   981.59 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  1.506250000000e-01 pour le numéro d'ordre 11
+Champ stocké <SIEF_ELGA> à l'instant  1.506250000000e-01 pour le numéro d'ordre 11
+Champ stocké <VARI_ELGA> à l'instant  1.506250000000e-01 pour le numéro d'ordre 11
+Champ stocké <COMPORTEMENT> à l'instant  1.506250000000e-01 pour le numéro d'ordre 11
+[ 53%] Instant calculé : 1.50625e-01, dernier instant archivé : 1.50625e-01, au numéro d'ordre :   
+11
+---------------------------------------------------------------------
+Instant de calcul:  1.512500000000e-01 - Niveau de découpe: 6
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
