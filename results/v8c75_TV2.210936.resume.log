@@ -2232,3 +2232,5 @@ Instant de calcul:  1.000000000000e-01 - Niveau de découpe: 1
 |    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
 |                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
 ---------------------------------------------------------------------
+|     0        X | 2.48310E-02  X | 3.75735E+01    |TANGENTE (NOSYM)|
+|     1        X | 7.59981E-03  X | 1.14588E+01    |TANGENTE (NOSYM)|
