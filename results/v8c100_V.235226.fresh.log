@@ -7433,3 +7433,7 @@ Instant de calcul:  3.300000000000e-01 - Niveau de découpe: 1
 |    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
 |                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
 ---------------------------------------------------------------------
+La mémoire consommée actuellement hors JEVEUX est de 1360.05 Mo.
+La mémoire limite pour l'allocation dynamique est fixée à 2849.34 Mo (-518.98 Mo).
+Cette valeur limite a été réactualisée lors de la mise en oeuvre d'un processus de libération.
+
