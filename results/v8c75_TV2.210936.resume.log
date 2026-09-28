@@ -2378,3 +2378,6 @@ Instant de calcul:  1.300000000000e-01 - Niveau de découpe: 2
 ---------------------------------------------------------------------
 |     0        X | 1.06779E-02  X | 1.50103E+01    |TANGENTE (NOSYM)|
 |     1        X | 5.36936E-03  X | 7.54859E+00    |TANGENTE (NOSYM)|
+|     2        X | 4.53800E-03  X | 6.37618E+00    |TANGENTE (NOSYM)|
+|     3        X | 4.65897E-03  X | 6.54677E+00    |TANGENTE (NOSYM)|
+|     4        X | 9.49750E-04  X | 1.33449E+00    |TANGENTE (NOSYM)|
