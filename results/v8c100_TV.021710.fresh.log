@@ -6251,3 +6251,6 @@ Cette valeur limite a été réactualisée lors de la mise en oeuvre d'un proces
  ║ alarme, vous pouvez obtenir des résultats inattendus !                                         ║
  ╚================================================================================================╝
 
+|     4        X | 1.47967E-03  X | 2.93041E+00    |TANGENTE (NOSYM)|
+|     5        X | 2.01834E-04  X | 3.99725E-01    |TANGENTE (NOSYM)|
+|     6        X | 1.40603E-04  X | 2.78460E-01    |TANGENTE (NOSYM)|
