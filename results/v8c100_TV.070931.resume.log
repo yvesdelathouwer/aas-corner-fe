@@ -77,3 +77,91 @@ FIN()
 # ------------------------------------------------------------------------------
 Command line #1:
     ulimit -c unlimited ; ulimit -t 100000 ; ( /root/mm/envs/aster/bin/python3 "v8c100_TV_s01.comm.changed.py" --link="F::mmed::/home/user/aas-corner-fe/jobs/../mesh/m8_h100_d16_ct100_e100.med::D::20" --memory 3000.0 --numthreads 4 --tpmax 20000 ; echo $? > _exit_code_ ) 2>&1 | tee -a fort.6
+setting '--memory' value to 2700.00 MB (keyword RESERVE_MEMOIRE)
+copying (shutil) '/home/user/aas-corner-fe/jobs/../mesh/m8_h100_d16_ct100_e100.med' to 'fort.20'...
+Ouverture en écriture du fichier ./vola.1
+
+<INFO> Démarrage de l'exécution.
+
+                       -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --                       
+                               Version 18.1.6 modifiée le 14/09/2026                                
+                                    révision n/a - branche 'n/a'                                    
+                                     Copyright EDF 1991 - 2026                                      
+                                                                                                    
+                              Exécution du : Mon Sep 28 07:09:57 2026                               
+                                       Nom de la machine : vm                                       
+                                        Architecture : 64bit                                        
+                                    Type de processeur : x86_64                                     
+                Système d'exploitation : Linux-6.18.44-fc-v37-x86_64-with-glibc2.39                 
+                                  Langue des messages : C (UTF-8)                                   
+                                     Version de Python : 3.14.7                                     
+                                      Version de NumPy : 2.5.3                                      
+                                  Version de MEDCoupling : 9.16.0                                   
+                                     Parallélisme MPI : inactif                                     
+                                    Parallélisme OpenMP : actif                                     
+                              Nombre de processus OpenMP utilisés : 4                               
+                                Version de la librairie HDF5 : 2.2.0                                
+                                Version de la librairie MED : 4.2.0                                 
+                               Version de la librairie MFront : 5.1.0                               
+                               Version de la librairie MUMPS : 5.8.2                                
+                                  Librairie PETSc : non disponible                                  
+                              Version de la librairie SCOTCH : 7.0.11                               
+
+restarting from a previous execution...
+/home/user/aas-corner-fe/wd/v8c100_TV/v8c100_TV_s01.comm.changed.py:13: DeprecationWarning: This feature is obsolete, 'PAR_LOT' has been removed.
+  POURSUITE(LANG='EN', PAR_LOT='NON')
+Valeur initiale du temps CPU maximum =   20000 secondes
+  Valeur du temps CPU maximum passé aux commandes =   18000 secondes
+  Réserve CPU prévue = 2000 secondes
+
+Ouverture en lecture du fichier ./glob.1
+
+Ajustement de la taille maximale des bases à 2048.00 Go.
+    
+Nom de la base                          :  GLOBALE
+     Créée avec la version                   :  18.01.06
+     Nombre d'enregistrements utilisés       :  1475
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre d'identificateurs utilisés       :  1498
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  74 %
+
+Ouverture en lecture du fichier ./glob.1
+
+Ouverture en écriture du fichier ./vola.1
+
+Fin de lecture (durée  0.000028  s.) 
+
+                      Mémoire limite pour l'allocation dynamique : 3212.06 Mo                       
+                         ajouté à l'initialisation du processus : 997.33 Mo                         
+                               Limite cible du processus : 4209.38 Mo                               
+                         Taille limite des fichiers d'échange : 2048.00 Go                          
+pi                       <class 'float'>
+e                        <class 'float'>
+tau                      <class 'float'>
+inf                      <class 'float'>
+nan                      <class 'float'>
+mesh                     <class 'libaster.Mesh'>
+model                    <class 'libaster.Model'>
+mat                      <class 'libaster.Material'>
+matH                     <class 'libaster.Material'>
+matHH                    <class 'libaster.Material'>
+stl                      <class 'libaster.Material'>
+slvm                     <class 'libaster.Material'>
+fmat                     <class 'libaster.MaterialField'>
+fix                      <class 'libaster.MechanicalLoadReal'>
+grp                      <class 'list'>
+load                     <class 'libaster.MechanicalLoadReal'>
+ramp                     <class 'libaster.Function'>
+steps                    <class 'libaster.ListOfFloats'>
+times                    <class 'libaster.TimesList'>
+LOADS                    <class 'str'>
+CURVE                    <class 'str'>
+common                   <class 'dict'>
+tcur                     <class 'float'>
+peak                     <class 'float'>
+stopped                  <class 'bool'>
+TARGETS                  <class 'list'>
+tn                       <class 'float'>
