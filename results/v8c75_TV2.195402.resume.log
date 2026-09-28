@@ -2272,3 +2272,39 @@ Instant de calcul:  1.200000000000e-01 - Niveau de découpe: 1
 |     0        X | 2.08707E-02  X | 3.03651E+01    |TANGENTE (NOSYM)|
 |     1        X | 7.77647E-03  X | 1.12798E+01    |TANGENTE (NOSYM)|
 |     2        X | 6.28016E-03  X | 9.06703E+00    |TANGENTE (NOSYM)|
+|     3        X | 7.49102E-04  X | 1.08012E+00    |TANGENTE (NOSYM)|
+|     4        X | 9.08137E-04  X | 1.30471E+00    |TANGENTE (NOSYM)|
+|     5        X | 2.75271E-04  X | 3.95861E-01    |TANGENTE (NOSYM)|
+|     6          | 7.78588E-05    | 1.11962E-01    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  7.785884522565e-05 au noeud et degré de liberté <38817  
+DY>
+Temps CPU consommé dans ce pas de temps    : 9 min 52 s
+
+* Nombre d'itérations de Newton                     : 7
+* Temps total intégration comportement              : 28.083 s (8 intégrations)
+* Temps total factorisation matrice                 : 7 min 27 s (7 factorisations)
+* Temps construction second membre                  : 0.466 s
+* Temps total résolution K.U=F                      : 1 min  4 s (7 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 51.370 s
+Mémoire (Mo) :  7079.12 /  3615.93 /  2863.90 /   871.85 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  1.200000000000e-01 pour le numéro d'ordre 7
+Champ stocké <SIEF_ELGA> à l'instant  1.200000000000e-01 pour le numéro d'ordre 7
+Champ stocké <VARI_ELGA> à l'instant  1.200000000000e-01 pour le numéro d'ordre 7
+Champ stocké <COMPORTEMENT> à l'instant  1.200000000000e-01 pour le numéro d'ordre 7
+[ 83%] Instant calculé : 1.20000e-01, dernier instant archivé : 1.20000e-01, au numéro d'ordre :    
+7
+---------------------------------------------------------------------
+Instant de calcul:  1.400000000000e-01 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
