@@ -8,7 +8,7 @@ jobs:
   fe:
     runs-on: ubuntu-latest
     timeout-minutes: 355
-    permissions: {contents: write}
+    permissions: {contents: write, actions: read}
     strategy:
       fail-fast: false
       matrix:
@@ -23,6 +23,16 @@ jobs:
           curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
           ./bin/micromamba create -y -q -p $HOME/mm/envs/aster -c conda-forge code-aster=18.1.6 gmsh python-gmsh
           nproc; free -m
+      - name: resume checkpoint (ci/resume holds the run id to continue from; empty = fresh)
+        run: echo "RID=$(cat ci/resume 2>/dev/null | tr -d ' \n')" >> $GITHUB_ENV
+      - if: env.RID != ''
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: ckpt-${{ matrix.job }}
+          path: wd/${{ matrix.job }}
+          run-id: ${{ env.RID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: mesh
         run: |
           export PATH=$HOME/mm/envs/aster/bin:$PATH
@@ -30,8 +40,13 @@ jobs:
       - name: run (one checkpointed step per call, results pushed to branch fe/${{ matrix.job }})
         run: |
           git config user.name aas-fe; git config user.email aas-fe@adit.org.il
-          git checkout -B fe/${{ matrix.job }}
-          git push -f -q origin HEAD:fe/${{ matrix.job }}
+          if [ -f wd/${{ matrix.job }}/next ]; then
+            git fetch -q origin fe/${{ matrix.job }} && git checkout -B fe/${{ matrix.job }} FETCH_HEAD   # resume: keep the curve
+            git checkout origin/main -- stepper.sh .github ci || true
+          else
+            git checkout -B fe/${{ matrix.job }}; git push -f -q origin HEAD:fe/${{ matrix.job }}
+          fi
+          echo "resume at seg $(cat wd/${{ matrix.job }}/next 2>/dev/null || echo 0)"
           sed -i "s#/home/claude/aas-corner-fe#$PWD#g" jobs/${{ matrix.job }}*
           sed -i 's/ncpus 2/ncpus 4/; s/memory_limit 6000/memory_limit 12000/' jobs/${{ matrix.job }}.export
           BRANCH=fe/${{ matrix.job }} JOBS=${{ matrix.job }} timeout 20400 ./stepper.sh || true
