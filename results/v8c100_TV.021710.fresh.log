@@ -6254,3 +6254,64 @@ Cette valeur limite a été réactualisée lors de la mise en oeuvre d'un proces
 |     4        X | 1.47967E-03  X | 2.93041E+00    |TANGENTE (NOSYM)|
 |     5        X | 2.01834E-04  X | 3.99725E-01    |TANGENTE (NOSYM)|
 |     6        X | 1.40603E-04  X | 2.78460E-01    |TANGENTE (NOSYM)|
+|     7          | 2.74265E-05    | 5.43178E-02    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  2.742649657564e-05 au noeud et degré de liberté <94254  
+DX>
+Temps CPU consommé dans ce pas de temps    : 22 min 55 s
+
+* Nombre d'itérations de Newton                     : 8
+* Temps total intégration comportement              : 1 min  2 s (9 intégrations)
+* Temps total factorisation matrice                 : 16 min 53 s (8 factorisations)
+* Temps construction second membre                  : 1.253 s
+* Temps total résolution K.U=F                      : 1 min 51 s (8 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 3 min  6 s
+Mémoire (Mo) :  6078.17 /  3944.41 /  3364.75 /  1423.07 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  1.840909090909e-01 pour le numéro d'ordre 9
+Champ stocké <SIEF_ELGA> à l'instant  1.840909090909e-01 pour le numéro d'ordre 9
+Champ stocké <VARI_ELGA> à l'instant  1.840909090909e-01 pour le numéro d'ordre 9
+Champ stocké <COMPORTEMENT> à l'instant  1.840909090909e-01 pour le numéro d'ordre 9
+[100%] Instant calculé : 1.84091e-01, seul l'instant initial a été archivé
+Temps CPU consommé dans le calcul          : 22 min 55 s
+
+dont temps CPU "perdu" dans les découpes            : 0.000 s
+* Nombre de pas de temps                            : 1
+* Nombre d'itérations de Newton                     : 8
+* Temps dans l'archivage                            : 0.078 s
+* Temps dans le post-traitement                     : 0.000 s
+* Temps total intégration comportement              : 1 min  2 s (9 intégrations)
+* Temps total factorisation matrice                 : 16 min 53 s (8 factorisations)
+* Temps construction second membre                  : 1.253 s
+* Temps total résolution K.U=F                      : 1 min 51 s (8 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):   3787.13    614.40   1128.62
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):    179.12     31.90    178.79
+#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):     14.71     14.23     16.23
+# Résultat commande #0002 (STAT_NON_LINE): res ('<0000000e>') de type <NonLinearResult>
+# Mémoire (Mo) :  6078.17 /  2283.82 /  3364.75 /  1423.07 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:     3337.62s (syst:      651.27s, elaps:     1398.53s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt184
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de
+/root/mm/envs/aster/lib/python3.14/site-packages/code_aster/Supervis/ExecuteCommand.py, ligne 184
+CALC_CHAMP(CRITERE='RELATIF',
+           FORCE='REAC_NODA',
+           INFO=1,
+           INST=0.1840909091,
+           PARALLELISME_TEMPS='NON',
+           PRECISION=1e-06,
+           RESULTAT=res)
+
+Le système linéaire à résoudre a 456148 degrés de liberté:
+   - 438438 sont des degrés de liberté physiques
+     (ils sont portés par 135682 noeuds du maillage)
+   - 17710 sont les couples de paramètres de Lagrange associés
+     aux 8855 relations linéaires dualisées.
