@@ -4405,3 +4405,23 @@ Le système linéaire à résoudre a 375089 degrés de liberté:
      (ils sont portés par 111469 noeuds du maillage)
    - 15452 sont les couples de paramètres de Lagrange associés
      aux 7726 relations linéaires dualisées.
+La matrice est de taille 375089 équations.
+  Elle contient 19289373 termes non nuls si elle est symétrique et 38203657 termes non nuls si elle
+n'est pas symétrique.
+  Soit un taux de remplissage de   0.027 %.
+Lecture de l'état initial
+L'état initial a été récupéré dans la structure de données résultat de nom <0000000e> pour le numéro
+d'ordre 6 et à l'instant  1.000000000000e-01
+Le champ <DEPL> est lu dans ETAT_INIT dans la structure de données résultat donné dans la commande.
+Le champ <SIEF_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+Le champ <VARI_ELGA> est lu dans ETAT_INIT dans la structure de données résultat donné dans la
+commande.
+---------------------------------------------------------------------
+Instant de calcul:  1.200000000000e-01 - Niveau de découpe: 1
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
