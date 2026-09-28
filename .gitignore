@@ -1,0 +1,4 @@
+wd/
+*.med
+jobs/*.curve
+jobs/*.mess
