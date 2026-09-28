@@ -785,3 +785,41 @@ Instant de calcul:  1.000000000000e-02 - Niveau de découpe: 2
 ---------------------------------------------------------------------
 |     0        X | 3.72864E-01  X | 2.80801E+02    |TANGENTE (NOSYM)|
 |     1        X | 6.10111E-01  X | 3.88154E+02    |TANGENTE (NOSYM)|
+|     2        X | 1.32988E+00  X | 8.12974E+02    |TANGENTE (NOSYM)|
+|     3        X | 8.71889E-02  X | 5.24551E+01    |TANGENTE (NOSYM)|
+|     4        X | 3.37254E-02  X | 1.96526E+01    |TANGENTE (NOSYM)|
+|     5        X | 5.65312E-03  X | 3.27360E+00    |TANGENTE (NOSYM)|
+|     6        X | 1.98052E-03  X | 1.14568E+00    |TANGENTE (NOSYM)|
+|     7          | 5.48906E-05    | 3.17483E-02    |TANGENTE (NOSYM)|
+---------------------------------------------------------------------
+Critère(s) de convergence atteint(s)
+
+Le résidu de type <RESI_GLOB_RELA> vaut  5.489056781857e-05 au noeud et degré de liberté <12728  
+DX>
+Temps CPU consommé dans ce pas de temps    : 14 min 36 s
+
+* Nombre d'itérations de Newton                     : 8
+* Temps total intégration comportement              : 36.949 s (9 intégrations)
+* Temps total factorisation matrice                 : 11 min 27 s (8 factorisations)
+* Temps construction second membre                  : 0.773 s
+* Temps total résolution K.U=F                      : 1 min 25 s (8 résolutions)
+* Temps assemblage matrice                          : 0.000 s
+* Temps autres opérations                           : 1 min  6 s
+Mémoire (Mo) :  6771.02 /  3334.99 /  2581.16 /   724.51 (VmPeak / VmSize / Optimum / Minimum)
+
+Archivage des champs
+
+Champ stocké <DEPL> à l'instant  1.000000000000e-02 pour le numéro d'ordre 1
+Champ stocké <SIEF_ELGA> à l'instant  1.000000000000e-02 pour le numéro d'ordre 1
+Champ stocké <VARI_ELGA> à l'instant  1.000000000000e-02 pour le numéro d'ordre 1
+Champ stocké <COMPORTEMENT> à l'instant  1.000000000000e-02 pour le numéro d'ordre 1
+[ 50%] Instant calculé : 1.00000e-02, dernier instant archivé : 1.00000e-02, au numéro d'ordre :    
+1
+---------------------------------------------------------------------
+Instant de calcul:  2.000000000000e-02 - Niveau de découpe: 2
+
+---------------------------------------------------------------------
+|     NEWTON     |     RESIDU     |     RESIDU     |     OPTION     |
+|    ITERATION   |     RELATIF    |     ABSOLU     |   ASSEMBLAGE   |
+|                | RESI_GLOB_RELA | RESI_GLOB_MAXI |(+ TYPE MATRICE)|
+---------------------------------------------------------------------
