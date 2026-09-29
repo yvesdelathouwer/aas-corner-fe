@@ -1,0 +1,107 @@
+name: AAS corner FE — singles
+# Single-leg runs asked by AAS on 29 Sep (message d): tension singles at c = 50, 100, 150 and the shear single at c = 150,
+# so that k_T(c), k_V(c) and phi = FE_TV / (T_FE + V_FE) are measured, not assumed. Same model, same solver settings as
+# the TV runs from 28 Sep on (SUBD_NIVEAU 10, ITER 50, NPREC 10, no line search), same meshes as the matching TV runs
+# (package meshes for c = 50 / 100, mkmesh.py for c = 150). Results on branches fe/<job>, checkpoints as artifacts
+# ckpt-<job>. First window: push to ci/trigger_s. Later windows dispatch themselves until every curve ends with STOP.
+on:
+  push:
+    branches: [main]
+    paths: ['ci/trigger_s']
+  workflow_dispatch:
+    inputs:
+      resume:
+        description: 'run id whose checkpoint artifacts to continue from (empty = fresh start)'
+        required: false
+        default: ''
+jobs:
+  fe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    permissions: {contents: write, actions: read}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {job: s50_T,  c: 50,  pkg: 'm8_h100_d16_ct50_e50.med'}
+          - {job: s100_T, c: 100, pkg: 'm8_h100_d16_ct100_e100.med'}
+          - {job: s150_T, c: 150, pkg: ''}
+          - {job: s150_V, c: 150, pkg: ''}
+    steps:
+      - uses: actions/checkout@v4
+      - name: skip if finished
+        id: done
+        run: |
+          if git fetch -q origin fe/${{ matrix.job }} 2>/dev/null && git show FETCH_HEAD:results/${{ matrix.job }}.curve 2>/dev/null | grep -q '^STOP'; then echo "fin=1" >> $GITHUB_OUTPUT; echo "${{ matrix.job }} already finished"; fi
+      - name: code_aster env
+        if: steps.done.outputs.fin != '1'
+        run: |
+          curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
+          ./bin/micromamba create -y -q -p $HOME/mm/envs/aster -c conda-forge code-aster=18.1.6 gmsh python-gmsh
+          nproc; free -m
+      - name: checkpoint of the previous window
+        if: steps.done.outputs.fin != '1' && inputs.resume != ''
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: ckpt-${{ matrix.job }}
+          path: wd/${{ matrix.job }}
+          run-id: ${{ inputs.resume }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: mesh
+        if: steps.done.outputs.fin != '1'
+        run: |
+          export PATH=$HOME/mm/envs/aster/bin:$PATH
+          mkdir -p mesh
+          if [ -n "${{ matrix.pkg }}" ]; then
+            tar xzf aas-corner-fe-2026-09-24.tar.gz aas-corner-fe/mesh/${{ matrix.pkg }} && mv aas-corner-fe/mesh/${{ matrix.pkg }} mesh/
+          else
+            cd mesh && python3 ../mkmesh.py ${{ matrix.c }} m8_h100_d16_ct${{ matrix.c }}_e${{ matrix.c }}.med
+          fi
+          ls -la mesh
+      - name: run (checkpointed steps, time-budgeted, results pushed to fe/${{ matrix.job }})
+        if: steps.done.outputs.fin != '1'
+        run: |
+          git config user.name aas-fe-s; git config user.email aas-fe@adit.org.il
+          J=${{ matrix.job }}
+          if [ -f wd/$J/next ]; then
+            git fetch -q origin fe/$J && git checkout -B fe/$J FETCH_HEAD
+            git checkout origin/main -- stepper_b.sh .github ci jobs || true
+          elif [ -n "${{ inputs.resume }}" ]; then
+            echo "resume requested but no checkpoint for $J — not restarting from zero"; exit 1
+          else
+            git checkout -B fe/$J; git push -f -q origin HEAD:fe/$J
+          fi
+          echo "start at seg $(cat wd/$J/next 2>/dev/null || echo 0)"
+          sed -i "s#/home/claude/aas-corner-fe#$PWD#g" jobs/$J*
+          sed -i 's/ncpus 2/ncpus 4/; s/memory_limit 6000/memory_limit 12000/' jobs/$J.export
+          chmod +x stepper_b.sh
+          BRANCH=fe/$J JOBS=$J BUDGET=19800 timeout 20400 ./stepper_b.sh || true
+      - name: keep checkpoint
+        if: always() && steps.done.outputs.fin != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ckpt-${{ matrix.job }}
+          path: |
+            wd/${{ matrix.job }}/base.ok
+            wd/${{ matrix.job }}/next
+          retention-days: 7
+  chain:
+    needs: fe
+    if: always()
+    runs-on: ubuntu-latest
+    permissions: {actions: write, contents: read}
+    steps:
+      - uses: actions/checkout@v4
+      - name: next window (unless every curve ends with STOP)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          left=0
+          for J in s50_T s100_T s150_T s150_V; do
+            git fetch -q origin fe/$J 2>/dev/null && git show FETCH_HEAD:results/$J.curve 2>/dev/null | grep -q "^STOP" && { echo "$J: done"; continue; }
+            left=$((left+1))
+          done
+          started=$(gh run view ${{ github.run_id }} --json createdAt -q .createdAt); age=$(( $(date +%s) - $(date -d "$started" +%s) ))
+          if [ $left -gt 0 ] && [ $age -lt 2400 ]; then echo "window ran only ${age}s — no chaining"; exit 0; fi
+          if [ $left -gt 0 ]; then gh workflow run fe-s.yml --ref main -f resume=${{ github.run_id }}; else echo "all singles finished"; fi
