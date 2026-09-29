@@ -31,6 +31,7 @@ jobs:
           - {job: s100_T, c: 100, pkg: 'm8_h100_d16_ct100_e100.med'}
           - {job: s150_T, c: 150, pkg: ''}
           - {job: s150_V, c: 150, pkg: ''}
+          - {job: g75_VL, c: 75,  pkg: ''}   # shear-led corner: tension head 0.15 x shear head displacement (AAS msg h)
     steps:
       - uses: actions/checkout@v4
       - name: skip if finished or not in this chain
