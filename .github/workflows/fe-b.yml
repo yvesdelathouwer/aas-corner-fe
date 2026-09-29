@@ -1,0 +1,110 @@
+name: AAS corner FE — line B
+# Second, independent line of the g150 / g40 runs (Yves, 2026-09-29): starts from the line-A checkpoints of a
+# given run, then chains ITSELF (workflow_dispatch at the end of every window) so it no longer depends on a
+# Claude session to be re-triggered. Results go to branches fe/<job>_b; checkpoints to artifacts ckpt-<job>-b.
+# The first run takes the checkpoint of line A (artifact ckpt-<job> of run `resume`) and line A's curve.
+on:
+  workflow_dispatch:
+    inputs:
+      resume:
+        description: 'run id whose checkpoint artifacts to continue from'
+        required: true
+        default: '36511821161'
+      first:
+        description: 'true = take the line-A checkpoint (ckpt-<job>) and the line-A curve; false = continue line B'
+        required: true
+        default: 'true'
+jobs:
+  fe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    permissions: {contents: write, actions: write}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {job: g150_TV, c: 150}
+          - {job: g40_TV,  c: 40}
+    steps:
+      - uses: actions/checkout@v4
+      - name: code_aster env
+        run: |
+          curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
+          ./bin/micromamba create -y -q -p $HOME/mm/envs/aster -c conda-forge code-aster=18.1.6 gmsh python-gmsh
+          nproc; free -m
+      - name: checkpoint of line A (first run)
+        if: inputs.first == 'true'
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: ckpt-${{ matrix.job }}
+          path: wd/${{ matrix.job }}
+          run-id: ${{ inputs.resume }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: checkpoint of line B (later runs)
+        if: inputs.first != 'true'
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: ckpt-${{ matrix.job }}-b
+          path: wd/${{ matrix.job }}
+          run-id: ${{ inputs.resume }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: mesh
+        run: |
+          export PATH=$HOME/mm/envs/aster/bin:$PATH
+          mkdir -p mesh && cd mesh && python3 ../mkmesh.py ${{ matrix.c }} m8_h100_d16_ct${{ matrix.c }}_e${{ matrix.c }}.med
+      - name: run (checkpointed steps, results pushed to branch fe/${{ matrix.job }}_b)
+        run: |
+          git config user.name aas-fe-b; git config user.email aas-fe@adit.org.il
+          J=${{ matrix.job }}; SRC=fe/$J; [ "${{ inputs.first }}" != "true" ] && SRC=fe/${J}_b
+          if [ -f wd/$J/next ]; then
+            git fetch -q origin $SRC && git checkout -B fe/${J}_b FETCH_HEAD       # keep the curve of the line we continue
+            git checkout origin/main -- stepper_b.sh .github ci jobs || true
+            [ "${{ inputs.first }}" = "true" ] && echo "$(date -u +%FT%TZ) LINE B starts from line-A checkpoint of run ${{ inputs.resume }} at seg $(cat wd/$J/next)" >> results/$J.progress
+          else
+            echo "no checkpoint found for $J in run ${{ inputs.resume }} — line B would restart from zero; stopping"; exit 1
+          fi
+          git push -f -q origin HEAD:fe/${J}_b
+          echo "resume at seg $(cat wd/$J/next)"
+          sed -i "s#/home/claude/aas-corner-fe#$PWD#g" jobs/$J*
+          sed -i 's/ncpus 2/ncpus 4/; s/memory_limit 6000/memory_limit 12000/' jobs/$J.export
+          chmod +x stepper_b.sh
+          BRANCH=fe/${J}_b JOBS=$J BUDGET=19800 timeout 20400 ./stepper_b.sh || true
+      - name: keep checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ckpt-${{ matrix.job }}-b
+          path: |
+            wd/${{ matrix.job }}/base.ok
+            wd/${{ matrix.job }}/next
+          retention-days: 7
+      - name: state
+        if: always()
+        run: |
+          J=${{ matrix.job }}
+          echo "$J: next seg $(cat wd/$J/next 2>/dev/null || echo '?') - last curve line: $(tail -1 results/$J.curve 2>/dev/null)"
+  chain:
+    needs: fe
+    if: always()
+    runs-on: ubuntu-latest
+    permissions: {actions: write, contents: read}
+    steps:
+      - uses: actions/checkout@v4
+      - name: next window (unless both curves end with STOP)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          left=0
+          for J in g150_TV g40_TV; do
+            git fetch -q origin fe/${J}_b 2>/dev/null && git show FETCH_HEAD:results/$J.curve 2>/dev/null | grep -q "^STOP" && { echo "$J: done"; continue; }
+            left=$((left+1))
+          done
+          # a window that lasted under 40 min did no FE step (env failure, missing checkpoint...): do not loop
+          started=$(gh run view ${{ github.run_id }} --json createdAt -q .createdAt); age=$(( $(date +%s) - $(date -d "$started" +%s) ))
+          if [ $left -gt 0 ] && [ $age -lt 2400 ]; then echo "this window ran only ${age}s — something failed before any step; NOT chaining (start it by hand after fixing)"; exit 0; fi
+          if [ $left -gt 0 ]; then
+            echo "chaining: $left job(s) still running -> dispatch next window from run ${{ github.run_id }}"
+            gh workflow run fe-b.yml --ref main -f resume=${{ github.run_id }} -f first=false
+          else echo "both jobs of line B finished — no further window"; fi
