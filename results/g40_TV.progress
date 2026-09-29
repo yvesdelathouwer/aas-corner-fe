@@ -29,3 +29,4 @@
 2026-09-29T08:14:54Z LINE B starts from line-A checkpoint of run 36511821161 at seg 14
 2026-09-29T08:14:56Z RUN g40_TV seg 14
 2026-09-29T11:53:54Z END g40_TV seg 14 rc=0 13138s last=CURVE 0.15 46766.8 43354.5 3412.34
+2026-09-29T11:53:56Z SKIP g40_TV seg 15: 13138s step does not fit in the remaining 6660s
