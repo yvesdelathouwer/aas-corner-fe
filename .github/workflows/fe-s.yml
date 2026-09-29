@@ -14,6 +14,10 @@ on:
         description: 'run id whose checkpoint artifacts to continue from (empty = fresh start)'
         required: false
         default: ''
+      only:
+        description: 'space-separated jobs this chain runs (empty = all)'
+        required: false
+        default: ''
 jobs:
   fe:
     runs-on: ubuntu-latest
@@ -29,9 +33,11 @@ jobs:
           - {job: s150_V, c: 150, pkg: ''}
     steps:
       - uses: actions/checkout@v4
-      - name: skip if finished
+      - name: skip if finished or not in this chain
         id: done
         run: |
+          ONLY="${{ inputs.only }}"; [ "${{ github.event_name }}" = "push" ] && ONLY="$(cat ci/only_s 2>/dev/null)"
+          if [ -n "$ONLY" ] && ! echo " $ONLY " | grep -q " ${{ matrix.job }} "; then echo "fin=1" >> $GITHUB_OUTPUT; echo "${{ matrix.job }} not in this chain ($ONLY)"; exit 0; fi
           if git fetch -q origin fe/${{ matrix.job }} 2>/dev/null && git show FETCH_HEAD:results/${{ matrix.job }}.curve 2>/dev/null | grep -q '^STOP'; then echo "fin=1" >> $GITHUB_OUTPUT; echo "${{ matrix.job }} already finished"; fi
       - name: code_aster env
         if: steps.done.outputs.fin != '1'
@@ -58,7 +64,7 @@ jobs:
           else
             cd mesh && python3 ../mkmesh.py ${{ matrix.c }} m8_h100_d16_ct${{ matrix.c }}_e${{ matrix.c }}.med
           fi
-          ls -la mesh
+          ls -la $GITHUB_WORKSPACE/mesh
       - name: run (checkpointed steps, time-budgeted, results pushed to fe/${{ matrix.job }})
         if: steps.done.outputs.fin != '1'
         run: |
@@ -69,6 +75,8 @@ jobs:
             git checkout origin/main -- stepper_b.sh .github ci jobs || true
           elif [ -n "${{ inputs.resume }}" ]; then
             echo "resume requested but no checkpoint for $J — not restarting from zero"; exit 1
+          elif git ls-remote --exit-code origin refs/heads/fe/$J >/dev/null; then
+            echo "branch fe/$J already exists (another chain owns it) — not restarting from zero"; exit 1
           else
             git checkout -B fe/$J; git push -f -q origin HEAD:fe/$J
           fi
@@ -97,11 +105,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          ONLY="${{ inputs.only }}"; [ "${{ github.event_name }}" = "push" ] && ONLY="$(cat ci/only_s 2>/dev/null)"
           left=0
-          for J in s50_T s100_T s150_T s150_V; do
+          for J in ${ONLY:-s50_T s100_T s150_T s150_V}; do
             git fetch -q origin fe/$J 2>/dev/null && git show FETCH_HEAD:results/$J.curve 2>/dev/null | grep -q "^STOP" && { echo "$J: done"; continue; }
             left=$((left+1))
           done
           started=$(gh run view ${{ github.run_id }} --json createdAt -q .createdAt); age=$(( $(date +%s) - $(date -d "$started" +%s) ))
           if [ $left -gt 0 ] && [ $age -lt 2400 ]; then echo "window ran only ${age}s — no chaining"; exit 0; fi
-          if [ $left -gt 0 ]; then gh workflow run fe-s.yml --ref main -f resume=${{ github.run_id }}; else echo "all singles finished"; fi
+          if [ $left -gt 0 ]; then gh workflow run fe-s.yml --ref main -f resume=${{ github.run_id }} -f only="$ONLY"; else echo "all singles finished"; fi
