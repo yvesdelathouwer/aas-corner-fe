@@ -47,3 +47,4 @@
 2026-09-30T08:53:37Z SKIP g40_TV seg 20: 14476s step does not fit in the remaining 5323s
 2026-09-30T08:54:40Z RUN g40_TV seg 20
 2026-09-30T12:55:58Z END g40_TV seg 20 rc=0 14479s last=CURVE 0.21 43869.6 41558.9 2310.74
+2026-09-30T12:55:59Z SKIP g40_TV seg 21: 14479s step does not fit in the remaining 5320s
