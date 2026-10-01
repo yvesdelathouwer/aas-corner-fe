@@ -58,3 +58,4 @@
 2026-10-01T08:27:09Z SKIP g100_VL seg 25: 6330s step does not fit in the remaining 1512s
 2026-10-01T08:28:22Z RUN g100_VL seg 25
 2026-10-01T11:46:04Z END g100_VL seg 25 rc=0 11862s last=CURVE 0.52 49970.4 25981.9 23988.5
+2026-10-01T11:46:06Z SKIP g100_VL seg 26: 11862s step does not fit in the remaining 7936s
