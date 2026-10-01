@@ -64,3 +64,4 @@
 2026-10-01T05:20:44Z SKIP s150_V seg 27: 9661s step does not fit in the remaining 10137s
 2026-10-01T05:22:35Z RUN s150_V seg 27
 2026-10-01T08:32:29Z END s150_V seg 27 rc=0 11394s last=CURVE 0.84 24352.6 -7.16772e-15 24352.6
+2026-10-01T08:32:31Z SKIP s150_V seg 28: 11394s step does not fit in the remaining 8403s
