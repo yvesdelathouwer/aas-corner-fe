@@ -33,6 +33,13 @@ jobs:
           - {job: s150_V, c: 150, pkg: ''}
           - {job: g75_VL, c: 75,  pkg: ''}   # shear-led corner: tension head 0.15 x shear head displacement (AAS msg h)
           - {job: g100_VL, c: 100, pkg: 'm8_h100_d16_ct100_e100.med'}   # shear-led corner c = 100, same 0.15 scale
+          # 3 Oct (Yves GO): ONE anchor at c = 75, tension + shear toward its own edge on HEADT (genjob_m.py),
+          # same mesh as the c 75 tension single; DX:DY = 0.25:1, 0.55:1, 1:0.85, 1:0.4 and pure DY
+          - {job: m75_F05, c: 75, pkg: 'm8_h100_d16_ct75_e75_T.med'}
+          - {job: m75_F1,  c: 75, pkg: 'm8_h100_d16_ct75_e75_T.med'}
+          - {job: m75_F2,  c: 75, pkg: 'm8_h100_d16_ct75_e75_T.med'}
+          - {job: m75_F4,  c: 75, pkg: 'm8_h100_d16_ct75_e75_T.med'}
+          - {job: m75_DY,  c: 75, pkg: 'm8_h100_d16_ct75_e75_T.med'}
     steps:
       - uses: actions/checkout@v4
       - name: skip if finished or not in this chain

@@ -31,3 +31,5 @@
 2026-09-30T03:28:15Z RUN s100_T seg 13
 2026-09-30T08:24:28Z END s100_T seg 13 rc=0 17773s last=STOP solver 0.26
 2026-10-03T16:46:44Z RESUME requested by Yves 3 Oct: retry from 0.26 mm with 0.005 mm steps
+2026-10-03T16:48:26Z RUN s100_T seg 13
+2026-10-03T16:48:43Z END s100_T seg 13 rc=0 17s last=STOP solver 0.26
