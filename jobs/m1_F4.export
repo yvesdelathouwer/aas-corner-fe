@@ -1,0 +1,36 @@
+P time_limit 20000
+P memory_limit 6000
+P ncpus 2
+P mpi_nbcpu 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s00.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s01.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s02.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s03.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s04.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s05.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s06.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s07.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s08.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s09.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s10.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s11.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s12.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s13.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s14.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s15.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s16.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s17.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s18.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s19.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s20.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s21.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s22.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s23.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s24.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s25.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s26.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s27.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s28.comm D 1
+F comm /home/claude/aas-corner-fe/jobs/m1_F4_s29.comm D 1
+F mmed /home/claude/aas-corner-fe/jobs/../mesh/m1_h100_d16_c75.med D 20
+F mess /home/claude/aas-corner-fe/jobs/m1_F4.mess R 6
