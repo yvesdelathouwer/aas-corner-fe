@@ -26,14 +26,15 @@ def reac(res, t):
             vals[c]=0.
     DETRUIRE(NOM=r2)
     return vals
-TARGETS=[0.32]
+tl15=DEFI_LIST_INST(DEFI_LIST=_F(VALE=(0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.225, 0.23, 0.235, 0.24, 0.245)), ECHEC=_F(EVENEMENT='ERREUR', ACTION='DECOUPE', SUBD_METHODE='MANUEL', SUBD_PAS=2, SUBD_NIVEAU=8))
+TARGETS=[0.245]
 for tn in TARGETS:
     if stopped or tn <= tcur+1e-9: continue
     try:
         if tcur < 1e-12 and '0'=='1':
-            res=STAT_NON_LINE(INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+            res=STAT_NON_LINE(INCREMENT=_F(LIST_INST=tl15, INST_FIN=tn), **common)
         else:
-            res=STAT_NON_LINE(reuse=res, ETAT_INIT=_F(EVOL_NOLI=res), INCREMENT=_F(LIST_INST=times, INST_FIN=tn), **common)
+            res=STAT_NON_LINE(reuse=res, ETAT_INIT=_F(EVOL_NOLI=res), INCREMENT=_F(LIST_INST=tl15, INST_FIN=tn), **common)
     except Exception as exc:
         print('AASSTOP at', tcur, exc, flush=True)
         open(CURVE,'a').write('STOP solver %g\n'%tcur); stopped=True; break
