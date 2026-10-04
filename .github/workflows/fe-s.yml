@@ -42,6 +42,9 @@ jobs:
           - {job: m1_F1,  c: 75, pkg: 'repo'}
           - {job: m1_F2,  c: 75, pkg: 'repo'}
           - {job: m1_F4,  c: 75, pkg: 'repo'}
+          # 4 Oct (Yves): the c = 150 singles redone on the same single-anchor model (mkmesh1.py C=150, mesh committed)
+          - {job: m150_T, c: 150, pkg: 'repo'}
+          - {job: m150_V, c: 150, pkg: 'repo'}
     steps:
       - uses: actions/checkout@v4
       - name: skip if finished or not in this chain
