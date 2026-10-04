@@ -88,7 +88,7 @@ jobs:
           J=${{ matrix.job }}
           if [ -f wd/$J/next ]; then
             git fetch -q origin fe/$J && git checkout -B fe/$J FETCH_HEAD
-            git checkout origin/main -- stepper_b.sh .github ci jobs || true
+            git checkout origin/main -- stepper_b.sh stepper_s.sh .github ci jobs || true
           elif [ -n "${{ inputs.resume }}" ]; then
             echo "resume requested but no checkpoint for $J — not restarting from zero"; exit 1
           elif git ls-remote --exit-code origin refs/heads/fe/$J >/dev/null; then
@@ -99,8 +99,8 @@ jobs:
           echo "start at seg $(cat wd/$J/next 2>/dev/null || echo 0)"
           sed -i "s#/home/claude/aas-corner-fe#$PWD#g" jobs/$J*
           sed -i 's/ncpus 2/ncpus 4/; s/memory_limit 6000/memory_limit 12000/' jobs/$J.export
-          chmod +x stepper_b.sh
-          BRANCH=fe/$J JOBS=$J BUDGET=19800 timeout 20400 ./stepper_b.sh || true
+          chmod +x stepper_s.sh
+          BRANCH=fe/$J JOBS=$J BUDGET=19800 timeout 20400 ./stepper_s.sh || true
       - name: keep checkpoint
         if: always() && steps.done.outputs.fin != '1'
         uses: actions/upload-artifact@v4
